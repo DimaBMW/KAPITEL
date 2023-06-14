@@ -91,7 +91,7 @@
         }
         :global(#{$class}-container__slider::after){
             content: "";
-            top: 40px;
+            top: -10px;
             left:-40px;
             position: absolute;
             width: 60px;
@@ -105,7 +105,7 @@
         }
         :global(#{$class}-container__slider::before){
             content: "";
-            bottom:40px;
+            bottom:-10px;
             left: -40px;
             position: absolute;
             width: 60px;
