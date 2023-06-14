@@ -1,0 +1,15 @@
+@mixin mediaQueryMin($breakpoint) {
+    @media screen and (min-width: $breakpoint) {
+        @content;
+    }
+}
+@mixin mediaQueryMax($breakpoint) {
+    @media screen and (max-width: calc($breakpoint - .02px)) {
+        @content;
+    }
+}
+@mixin mediaQueryMinMax($breakpoint_min, $breakpoint_max) {
+    @media screen and (min-width: $breakpoint_min) and (max-width: calc($breakpoint_max - .02px)) {
+        @content;
+    }
+}

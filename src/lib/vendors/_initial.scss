@@ -1,0 +1,17 @@
+@import     'reset';
+@import     'fonts';
+@import 'scrollbar';
+@import 'selection';
+
+body {
+    min-width:          100vw;
+    overflow-x:        hidden;
+    background:     $bg-color;
+
+    font-family: $font-f;
+    font-size:   $font-z;
+    font-weight: $font-w;
+    line-height: $line-h;
+    color:        $color;
+    font-feature-settings: "lnum";
+}

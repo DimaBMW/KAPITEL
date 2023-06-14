@@ -1,0 +1,30 @@
+@import 'vars';
+
+// VARS
+$font-f: CenturyGothicPaneuropean, -apple-system, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-z:     16px;
+$font-w:      400;
+$line-h:     16px;
+$color:   black;
+$bg-color:   #FFFFFF;
+
+// Title
+$font-z_title: 48px;
+$font-w_title:  600;
+$line-h_title: 48px;
+$color_title: black;
+
+// Product
+$font-z_productName: $font-z;
+$font-z_product: 12px;
+$line-h_product: 12px;
+$color_product: #818181;
+$bg-color_button: $primary;
+
+// Burger
+$bg-color_burger: $primary;
+$bg-color_burgerLine: $white;
+$bor-r_burger: 6px;
+$pad_burger: 10px;
+
+$subnav_distance: 10px;

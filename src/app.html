@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+    <head>
+        <!-- Meta data -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+        <!-- Meta data -->
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <link rel="shortcut icon" href="./images/FaviconKapitel.svg" type="image/x-icon">
+        %sveltekit.head%
+    </head>
+
+    <body>
+        <div id="service" class="service">
+            <div id="images-maps" class="images-maps">
+                <map name="home">
+                    <area shape="default" href="/" alt="Капитель">
+                </map>
+            </div>
+        </div>
+
+        <main id="app" class="app">%sveltekit.body%</main>
+    </body>
+    <script>
+        import "../node_modules/@glidejs/glide/dist/css/glide.core.min.css";
+    </script>
+</html>
