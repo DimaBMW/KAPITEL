@@ -76,7 +76,7 @@
             height: 0;
             text-align: left;
             opacity: 0;
-            transition: all .30s ease;
+            transition: all .20s ease;
         }
         :global(#{$class}-text.select-active){
             position: relative;

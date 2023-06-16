@@ -4,6 +4,7 @@
     import Text from "../components/Text.svelte";
     import Image from "../components/Image.svelte";
     import Icon from "../components/Icon.svelte";
+    import viewport from "../lib/stores/useViewportAction.js";
     import { onMount } from "svelte";
     import scrollama from "scrollama";
 
@@ -20,16 +21,28 @@
                 offset: 0.5,
             })
             .onStepEnter(handleStepEnter);
-        
-            function handleStepEnter(response) {
-                const { index } = response;
-                
-            
-            }
+
+        function handleStepEnter(response) {
+            const { index } = response;
+        }
     });
+
+    $:y = 0;
+
+    let isAnimating = true;
+
+    function animationEnded() {
+        isAnimating = false;
+    }
+
+    let enterViewport=false;
+    function enterViewpor(){
+        enterViewport=true;
+    }
 </script>
 
-<svelte:window bind:innerWidth />
+<svelte:window bind:scrollY={y} bind:innerWidth />
+
 <section class="whywe" id="whywe" style="background-color: #f5f5f5;">
     <Container class="whywe-container">
         <main class="whywe-main">
@@ -189,7 +202,7 @@
                             >
                         </div>
                     </div>
-                    <div class="whywe-black-contnet">
+                    <div class="whywe-black-contnet" use:viewport on:exitViewport={()=>console.log('exit')} on:enterViewport="{enterViewpor}">
                         <div class="black-contnet__cols1 bccb">
                             <div class="blackitem blackileft">
                                 <div class="footer-information__icons">
@@ -283,16 +296,98 @@
             </Container>
         </main>
     </Container>
-    <Image
-        src="{host}/images/Whywe/transportir.svg"
-        alt="protractor"
-        class="whywe-img"
-    />
+    <div class="whywe-img-main-container {!isAnimating?'transportactive':''}">
+        <div class="whywe-img-container" style="transform:rotate({y / 20}deg)">
+            <Image
+                src="{host}/images/Whywe/transportir30.svg"
+                alt="protractor"
+                class="whywe-img__1"
+            />
+        </div>
+        <div
+            class="whywe-img-container-2"
+            style="transform:rotate({-y / 50}deg)"
+        >
+            <Image
+                src="{host}/images/Whywe/transportirceluyctnter.svg"
+                alt="protractor"
+                class="whywe-img__2"
+            />
+        </div>
+    </div>
+    <div class="whywe-img-main-container-2 {!isAnimating?'transportactive':''}">
+        <div class="whywe-img-container-3 {enterViewport?'transactive':''}">
+            <Image
+                src="{host}/images/Whywe/transportiroartosnova.svg"
+                alt="protractor"
+                class="whywe-img__3"
+            />
+        </div>
+        <div class="whywe-img-container-4 {enterViewport?'transactive':''}" on:animationend="{animationEnded}">
+            <Image
+                src="{host}/images/Whywe/transportiroartcenter.svg"
+                alt="protractor"
+                class="whywe-img__4"
+            />
+        </div>
+    </div>
+    <svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" class="svg-transport">
+        <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
+        <g class="layer">
+         <title>Layer 1</title>
+         <line fill="none" id="svg_5" class="line-one {!isAnimating?'line-acive':''}" stroke="#000000" stroke-width="0.5" x1="145.5" x2="464.5" y1="361.5" y2="134.5"/>
+        </g>
+    </svg>
+    <svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" class="svg-transport-2">
+        <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
+        <g class="layer">
+         <title>Layer 1</title>
+         <line fill="none" id="svg_5" class="line-one {!isAnimating?'line-acive':''}" stroke="#000000" stroke-width="0.5" x1="145.5" x2="464.5" y1="361.5" y2="134.5"/>
+        </g>
+    </svg>
+    <svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" class="svg-transport-3">
+        <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
+        <g class="layer">
+         <title>Layer 1</title>
+         <line fill="none" id="svg_5" class="line-one {!isAnimating?'line-acive':''}" stroke="#000000" stroke-width="0.5" x1="145.5" x2="464.5" y1="361.5" y2="134.5"/>
+        </g>
+    </svg>
+    <svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" class="svg-transport-4">
+        <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
+        <g class="layer">
+         <title>Layer 1</title>
+         <line fill="none" id="svg_5" class="line-one {!isAnimating?'line-acive':''}" stroke="#000000" stroke-width="0.5" x1="145.5" x2="464.5" y1="361.5" y2="134.5"/>
+        </g>
+    </svg>
+    <svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" class="svg-transport-5">
+        <!-- Created with SVG-edit - https://github.com/SVG-Edit/svgedit-->
+        <g class="layer">
+         <title>Layer 1</title>
+         <line fill="none" id="svg_5" class="line-one {!isAnimating?'line-acive':''}" stroke="#000000" stroke-width="0.5" x1="145.5" x2="464.5" y1="361.5" y2="134.5"/>
+        </g>
+    </svg>
+    <svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" class="svg-transport-6">
+        <g class="layer">
+         <title>Layer 1</title>
+         <line fill="none" id="svg_3" stroke="#000000" class="line-one {!isAnimating?'line-acive':''}" stroke-width="0.5" x1="125.5" x2="349.5" y1="305.5" y2="109.5"/>
+         <line fill="none" id="svg_4" stroke="#000000" class="line-one {!isAnimating?'line-acive':''}" stroke-width="0.5" x1="348.5" x2="407.5" y1="110.5" y2="182.5"/>
+         <line fill="none" id="svg_5" stroke="#000000" class="line-one {!isAnimating?'line-acive':''}" stroke-width="0.5" x1="407.5" x2="138.5" y1="181.5" y2="320.5"/>
+        </g>
+       </svg>
+       <svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" class="svg-transport-7">
+        <g class="layer">
+         <title>Layer 1</title>
+         <line fill="none" id="svg_3" stroke="#000000" class="line-one {!isAnimating?'line-acive':''}" stroke-width="0.5" x1="125.5" x2="349.5" y1="305.5" y2="109.5"/>
+         <line fill="none" id="svg_4" stroke="#000000" class="line-one {!isAnimating?'line-acive':''}" stroke-width="0.5" x1="348.5" x2="407.5" y1="110.5" y2="182.5"/>
+         <line fill="none" id="svg_5" stroke="#000000" class="line-one {!isAnimating?'line-acive':''}" stroke-width="0.5" x1="407.5" x2="138.5" y1="181.5" y2="320.5"/>
+        </g>
+       </svg>
 </section>
 
 <style lang="scss">
     $breakpoints-4k: 3839.98px;
     $breakpoints-2k: 2559.98px;
+    $rotate: y;
     $class: ".whywe";
     #{$class} {
         position: relative;
@@ -309,9 +404,205 @@
         }
         :global(.blackitem-icon) {
         }
-        :global(.step){
+        :global(.step) {
             color: red;
         }
+        //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        :global(.svg-transport){
+            position: absolute;
+            z-index: 900;
+            left: -146px;
+            top: 25%;
+            transform: rotate(-5deg);
+        }
+        :global(.svg-transport-2){
+            position: absolute;
+            z-index: 900;
+            left: -90px;
+            top: 42.5%;
+            transform: rotate(35deg);
+        }
+        :global(.svg-transport-3){
+            position: absolute;
+            z-index: 900;
+            left: -182px;
+            top: 63%;
+            transform: rotate(88deg);
+        }
+        :global(.svg-transport-4){
+            position: absolute;
+            z-index: 900;
+            left: -125px;
+            top: 55.2%;
+            transform: rotate(65deg);
+        }
+        :global(.svg-transport-5){
+            position: absolute;
+            z-index: 900;
+            left: -108px;
+            top: 33.4%;
+            transform: rotate(15deg);
+        }
+        :global(.svg-transport-6){
+            position: absolute;
+            z-index: 900;
+            left: -158px;
+            top: 24.4%;
+            transform: rotate(-20deg);
+        }
+        :global(.svg-transport-7){
+            position: absolute;
+            z-index: 900;
+            left: -248px;
+            top: 65.4%;
+            transform: rotate(90deg);
+        }
+        :global(.line-one){
+            stroke: #AFA9A9;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+        }
+        :global(.line-one.line-acive){
+            animation: transportir-line 5s linear forwards;
+        }
+        @keyframes  transportir-line{
+            100%{
+                stroke-dashoffset: 0;
+            }
+        }
+        //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        :global(.whywe-img-container) {
+            position: absolute;
+            z-index: 1000;
+            top: 25%;
+            width: 1200px;
+            height: auto;
+            // background: red;
+            // animation: wheel 5s 1s linear infinite;
+            // animation-fill-mode:both;
+            // transform-origin: center    ;
+        }
+        :global(.whywe-img-main-container) {
+            position: absolute;
+            top: 25%;
+            left: -39.1%;
+            visibility: hidden;
+            opacity: 0;
+        }
+        :global(.whywe-img-main-container-2) {
+            position: absolute;
+            top: 26%;
+            left: -42.2%;
+        }
+        :global(.whywe-img-main-container-2.transportactive) {
+            visibility: hidden;
+            opacity: 0;
+        }
+        :global(.whywe-img-main-container.transportactive){
+            visibility: visible;
+            opacity: 1;
+        }
+        :global(.whywe-img-container-2) {
+            position: absolute;
+            z-index: 1000;
+            top: 25%;
+            width: 1200px;
+            height: auto;
+            // background: red;
+            // animation: wheel2 5.5s 1s linear infinite;
+            // animation-fill-mode:both;
+            // transform-origin: center    ;
+        }
+        :global(.whywe-img-container-3) {
+            position: absolute;
+            z-index: 1000;
+            top: 26%;
+            left: -42%;
+            width: 642px;
+            height: auto;
+        }
+        :global(.whywe-img-container-3.transactive){
+            animation: wheel 2.5s 1s linear forwards;
+            animation-fill-mode: both;
+            transform-origin: center right;
+        }
+        :global(.whywe-img-container-4.transactive){
+            animation: wheel2 2.5s 1s linear forwards;
+            animation-fill-mode: both;
+            transform-origin: center right;
+        }
+        :global(.whywe-img-container-4) {
+            position: absolute;
+            z-index: 1000;
+            top: 26%;
+            left: -42%;
+            width: 642px;
+            height: auto;
+        }
+        :global(.whywe-img-container img) {
+        }
+        :global(.whywe-img__1 img) {
+            bottom: 0;
+            width: 100%;
+            height: auto;
+            transform: rotate(180deg);
+            // right: 100%;
+        }
+        :global(.svg1) {
+            stroke: greenyellow;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: svg1 2s linear forwards;
+        }
+        @keyframes svg1 {
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+        :global(.whywe-img__3 img) {
+            bottom: 0;
+            width: 100%;
+            position: relative;
+            height: auto;
+            left: 31px;
+            top: 5px;
+            transform: rotate(0deg);
+            // right: 100%;
+        }
+        :global(.whywe-img__2 img) {
+            bottom: 0;
+            width: 100%;
+            height: auto;
+            transform: rotate(180deg);
+            // right: 100%;
+        }
+        :global(.whywe-img__4 img) {
+            bottom: 0;
+            width: 100%;
+            position: relative;
+            height: auto;
+            left: 31px;
+            top: 5px;
+            transform: rotate(0deg);
+            // right: 100%;
+        }
+        @keyframes wheel {
+            from {
+                transform: translateX(0) rotate(0);
+            }
+            to {
+                transform: translateX(0px) rotate(0.5turn);
+            }
+        }
+        @keyframes wheel2 {
+            from {
+                transform: translateY(0) rotate(0);
+            }
+            to {
+                transform: translateX(0px) rotate(-0.5turn);
+            }
+        }
+        //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
         &blackitem-title {
             font-family: "Montserrat";
         }

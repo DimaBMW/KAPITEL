@@ -65,7 +65,6 @@
     }
     .slide-img {
         width: 340px;
-        border-radius: 5px;
         @include mediaQueryMin($breakpoints-4k) {
             width: 380px;
         }
