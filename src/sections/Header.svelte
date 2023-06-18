@@ -13,6 +13,16 @@
   // variables
   let Background_img = "/images/Header/Background.png";
   let innerWidth;
+  //Адаптив мобилка
+  import { onMount } from 'svelte';
+    import LogoMobile from '../components/Logo_Mobile.svelte';
+
+    let isMobile = false;
+
+    onMount(() => {
+        isMobile = window.innerWidth <= 375.98;
+    });
+
 </script>
 
 <svelte:window bind:innerWidth />
@@ -104,7 +114,6 @@
 </header>
 
 <style lang="scss">
-  $breakpoints-4k: 3839.98px;
   $breakpoints-2k: 2559.98px;
   $class: ".header";
   #{$class} {
@@ -122,9 +131,10 @@
       padding: 0px 40px;
       margin: 0 0;
       display: flex;
-      @include mediaQueryMin($breakpoints-4k) {
-        padding: 0px 100px;
-      }
+    }
+    :global(#{$class}-container.mobile){
+      display: none;
+      visibility: hidden;
     }
     :global(.footer-information__icons){
             display: flex;
@@ -133,9 +143,6 @@
                 fill: rgba(255, 255, 255, 0.5);
                 aspect-ratio: 1/1;
                 width: 30px;
-                @include mediaQueryMin($breakpoints-4k){
-                    width: 50px;
-                }
                 &:hover{
                     cursor: pointer;
                     fill:rgb(255, 255, 255);
@@ -159,9 +166,6 @@
       font-size: 26px;
       line-height: 20px;
       color: #ffffff;
-      @include mediaQueryMin($breakpoints-4k) {
-        font-size: 46px;
-      }
     }
     :global(#{$class}-main) {
       flex: 0 1 80%;
@@ -181,9 +185,6 @@
     }
     :global(#{$class}-text) {
       padding: 40% 0px 0px 35px;
-      @include mediaQueryMin($breakpoints-4k) {
-        padding: 35% 0px 0px 0px;
-      }
       @include mediaQueryMin($breakpoints-2k) {
         padding: 40% 0px 0px 35px;
       }
@@ -286,9 +287,6 @@
       justify-content: center;
       border-bottom: 0.5px solid #ffffff95;
       position: relative;
-      @include mediaQueryMin($breakpoints-4k) {
-        height: 200px;
-      }
     }
     :global(#{$class}-button::after) {
       content: "";
@@ -298,6 +296,21 @@
       width: 15px;
       border: 1px solid #ffffff;
       transform: rotate(-45deg);
+    }
+    //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||Mobile||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+    :global(#{$class}-container__mobile){
+      display: none;
+      visibility: hidden;
+    }
+    :global(#{$class}-container__mobile.mobile){
+      display: block;
+      visibility: hidden;
+      height: 100vh;
+      width: 100%;
+      z-index: 10000;
+      padding: 0px 20px;
+      position: relative;
+      margin: 0 0;
     }
   }
   $class_2: ".sait-bar";
@@ -312,9 +325,6 @@
       align-items: center;
       justify-content: end;
       position: relative;
-      @include mediaQueryMin($breakpoints-4k) {
-        height: 200px;
-      }
     }
     :global(#{$class_2}-datas::after) {
       content: "";
@@ -324,10 +334,6 @@
       width: 40px;
       border-bottom: 0.5px solid #ffffff95;
       transform: rotate(-180deg);
-      @include mediaQueryMin($breakpoints-4k) {
-        width: 100px;
-        right: -100px;
-      }
     }
   }
 </style>

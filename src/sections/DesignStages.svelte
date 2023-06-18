@@ -6,6 +6,15 @@
     import Image from "../components/Image.svelte";
     import SiatBar from "../components/Siat-Bar.svelte";
     let innerWidth;
+
+      //Адаптив мобилка
+  import { onMount } from 'svelte';
+
+    let isMobile = false;
+
+    onMount(() => {
+        isMobile = window.innerWidth <= 375.98;
+    });
 </script>
 
 <svelte:window bind:innerWidth />

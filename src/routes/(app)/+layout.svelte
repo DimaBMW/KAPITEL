@@ -8,25 +8,30 @@
     import Quetions from '../../sections/Quetions.svelte';
     import Footer from '../../sections/Footer.svelte';
     import MainSaitBar from '../../sections/MainSaitBar.svelte';
-
+    import HeaderMobile from '../../sections/Header__mobile.svelte';
     import  {  Cursor  }  from  'curseur';
+
+    let innerWidth;
 </script>
 
 <svelte:head>
     <title>Kapitel</title>
 </svelte:head>
+<svelte:window bind:innerWidth />
 
-
-<Header />
-<MainSaitBar/>
-<DesignStagesBlack/>
-<PostProjectSupportObject/>
-<ProjectDirectories/>
-<Partners/>
-<Quetions/>
-<Footer/>
-<slot />
-
+{#if innerWidth<759.98}
+    <HeaderMobile/>
+{:else}
+    <Header />
+    <MainSaitBar/>
+    <DesignStagesBlack/>
+    <PostProjectSupportObject/>
+    <ProjectDirectories/>
+    <Partners/>
+    <Quetions/>
+    <Footer/>
+    <slot />
+{/if}
 <style lang="scss">
     
 </style>

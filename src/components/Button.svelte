@@ -1,19 +1,23 @@
 <script>
-    import  {  Cursor  }  from  'curseur';
+    import { Cursor } from "curseur";
+    import { onMount } from "svelte";
+
+    let isMobile = false;
+
+    onMount(() => {
+        isMobile = window.innerWidth <= 759.98;
+    });
 </script>
 
-
-
 <button
-    class="button {$$props.class ? $$props.class : ''}"
+    class="button {isMobile? 'mobile':''} {$$props.class ? $$props.class : ''}"
     type={$$props.type ? $$props.type : "button"}
 >
     <slot />
 </button>
 
 <style lang="scss">
-    $breakpoints-4k: 3840px;
-    $breakpoints-2k:2559.98px;
+    $breakpoints-2k: 2559.98px;
     $class: ".button";
     #{$class} {
         position: relative;
@@ -22,7 +26,8 @@
         width: 220px;
         overflow: hidden;
         position: relative;
-        top:17%;
+        align-self: center;
+        top: 17%;
         transform: translateY(-50%);
         background: none;
         font-family: "Montserrat";
@@ -32,14 +37,12 @@
         line-height: 17px;
         text-transform: uppercase;
         color: #ffffff;
-        cursor: pointer;
+        cursor: crosshair;
         transition: all 0.5s ease;
-        @include mediaQueryMin($breakpoints-4k) {
-            height: 100px;
-            width: 420px;
-            font-size: 30px;
+        &.mobile{
+            border: 1px solid #FFFFFF;
         }
-        @include mediaQueryMin($breakpoints-2k){
+        @include mediaQueryMin($breakpoints-2k) {
             font-size: 18px;
             width: 230px;
         }
@@ -78,12 +81,6 @@
         border-left: 0;
         border-right: 0;
         transition: all 0.5s ease;
-        @include mediaQueryMin($breakpoints-4k) {
-            height: 96px;
-            border: 2px solid #ffffff;
-            border-left: 0;
-            border-right: 0;
-        }
     }
     .button:hover::before {
         width: 100%;

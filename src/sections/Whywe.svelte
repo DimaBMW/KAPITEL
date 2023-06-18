@@ -39,6 +39,12 @@
     function enterViewpor(){
         enterViewport=true;
     }
+
+    let isMobile = false;
+
+onMount(() => {
+        isMobile = window.innerWidth <= 375.98;
+    });
 </script>
 
 <svelte:window bind:scrollY={y} bind:innerWidth />
@@ -47,134 +53,6 @@
     <Container class="whywe-container">
         <main class="whywe-main">
             <Container class="whywe-content__1">
-                {#if innerWidth > 3839.98}
-                    <div class="content__1-text-4k">
-                        <Title class="content__1-title-4k"
-                            >Нет того, что нам не под силу — разработаем проекты
-                            любой сложности</Title
-                        >
-                        <div class="content__1-text-1">
-                            <Text class="text-1__1-4k"
-                                >Архитектурная студия «Капитель» занимается
-                                проектированием капитальных строений и частных
-                                домов в Краснодаре с 2017 года. За это время мы
-                                отдали под реализацию более 300 проектов. В
-                                работе демонстрируем высокую
-                                клиентоориентированность, поэтому 9 из 10
-                                заказов получаем по рекомендации.
-                            </Text>
-                            <Text class="text-1__2-4k"
-                                >Доверяя свои проекты студии «Капитель», вы
-                                можете быть спокойны за качество, бюджет и сроки
-                                исполнения. У нас работают специалисты со стажем
-                                более 15 лет. Мы тщательно согласовываем каждый
-                                этап с заказчиком и все рутинные процессы берем
-                                на себя.</Text
-                            >
-                        </div>
-                    </div>
-                    <div class="whywe-black-contnet-4k">
-                        <div class="black-contnet__cols1-4k bccb">
-                            <div class="blackitem-4k blackileft">
-                                <div class="blackitem-icon-4k">
-                                    <Image
-                                        src="/images/Whywe/Proecting.svg"
-                                        class="blackitem-icon-4k"
-                                    />
-                                </div>
-                                <div class="blackitem-contnet">
-                                    <Title class="blackitem-title-4k"
-                                        >Проектирование домов и коттеджей</Title
-                                    >
-                                    <Text class="blackitem-text-4k"
-                                        >В наших проектах продумано все до
-                                        мелочей — ни одна потребность клиента не
-                                        остается незамеченной.</Text
-                                    >
-                                </div>
-                            </div>
-                            <div class="blackitem-4k blackileft">
-                                <div class="blackitem-icon-4k">
-                                    <Image
-                                        src="/images/Whywe/Reconstruction.svg"
-                                        class="blackitem-icon-4k"
-                                    />
-                                </div>
-                                <div class="blackitem-contnet">
-                                    <Title class="blackitem-title-4k"
-                                        >Грамотная перепланировка при
-                                        реконструкции</Title
-                                    >
-                                    <Text class="blackitem-text-4k"
-                                        >Подготавливаем весь пакет чертежей и
-                                        документации в соотвествии с
-                                        действующими нормативами.</Text
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                        <div class="black-contnet__cols1-4k bccb">
-                            <div class="blackitem-4k blackileft">
-                                <div class="blackitem-icon-4k">
-                                    <Image
-                                        src="/images/Whywe/Dizain.svg"
-                                        class="blackitem-icon-4k"
-                                    />
-                                </div>
-                                <div class="blackitem-contnet">
-                                    <Title class="blackitem-title-4k"
-                                        >Разработка дизайна иньерьеров</Title
-                                    >
-                                    <Text class="blackitem-text-4k"
-                                        >Создаем комфортное жилье с эргономичным
-                                        пространством — благодаря комплексному
-                                        подходу сделать это нам куда проще!</Text
-                                    >
-                                </div>
-                            </div>
-                            <div class="blackitem-4k blackileft">
-                                <div class="blackitem-icon-4k">
-                                    <Image
-                                        src="/images/Whywe/Nadzor.svg"
-                                        class="blackitem-icon-4k"
-                                    />
-                                </div>
-                                <div class="blackitem-contnet">
-                                    <Title class="blackitem-title-4k"
-                                        >Контроль качества</Title
-                                    >
-                                    <Text class="blackitem-text-4k"
-                                        >Не пускаем на самотек работу строителей
-                                        — следим, чтобы не было отклонений от
-                                        утвержденного проекта и соблюдались
-                                        сроки.</Text
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                        <div class="black-contnet__cols1-4k-center bccb">
-                            <div class="blackitem-4k blackileft">
-                                <div class="blackitem-icon-4k">
-                                    <Image
-                                        src="/images/Whywe/Koreckting.svg"
-                                        class="blackitem-icon-4k"
-                                    />
-                                </div>
-                                <div class="blackitem-contnet">
-                                    <Title class="blackitem-title-4k"
-                                        >Корректировка и согласование проекта</Title
-                                    >
-                                    <Text class="blackitem-text-4k"
-                                        >Согласовываем каждый этап с заказчиком
-                                        и готовим конечную проектную
-                                        документацию в соответсвии с
-                                        индивидуальными требованиями.</Text
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                {:else}
                     <div class="content__1-text">
                         <div class="content__title">
                             <Title class="content__1-title"
@@ -292,7 +170,6 @@
                             </div>
                         </div>
                     </div>
-                {/if}
             </Container>
         </main>
     </Container>
