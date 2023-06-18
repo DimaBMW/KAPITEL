@@ -51,35 +51,44 @@
         </section>
     </Container>
     <div class="header-cap__menu-box {openmenubox ? 'is-active' : ''}">
-        <div class="header-menu-cap">
-            <LogoMobileBlack class="header-logo {openmenubox ? 'is-active' : ''}"/>
-            <LinkBlack clas="header-cap__link-black" href="tel:+79891412808"
-            >+7 (989) 141-28-08</LinkBlack
-            >
+        <div>
+            <div class="header-menu-cap">
+                <LogoMobileBlack class="header-logo {openmenubox ? 'is-active' : ''}"/>
+                <LinkBlack clas="header-cap__link-black" href="tel:+79891412808"
+                >+7 (989) 141-28-08</LinkBlack
+                >
+            </div>
+            <div class="header-menu-content">
+                <NavigationMobile
+                class="header-navigation"
+                links={[
+                  {
+                    name: "Проекты",
+                    href: "/project",
+                  },
+                  {
+                    name: "О нас",
+                    href: "/about_Us",
+                  },
+                  {
+                    name: "Работы",
+                    href: "/works",
+                  },
+                  {
+                    name: "Контакты",
+                    href: "/contacts",
+                  },
+                ]}
+              />
+            </div>
         </div>
-        <div class="header-menu-content">
-            <NavigationMobile
-            class="header-navigation"
-            links={[
-              {
-                name: "Проекты",
-                href: "/project",
-              },
-              {
-                name: "О нас",
-                href: "/about_Us",
-              },
-              {
-                name: "Работы",
-                href: "/works",
-              },
-              {
-                name: "Контакты",
-                href: "/contacts",
-              },
-            ]}
-          />
-        </div>
+        <div class="header-menu-icon">
+            <div class="footer-information__icons">
+              <Icon name="Instagramm"class="instagramm"/>
+              <Icon name="Mail" class="mail"/>
+              <Icon name="Telegramm" class="telegramm"/>
+            </div>
+          </div>
     </div>
 </header>
 
@@ -104,7 +113,25 @@
             padding: 20px 20px;
             margin: 0 0;
         }
-
+        :global(.footer-information__icons){
+            display: flex;
+            gap: 20px;
+            align-self: center;
+            :global(.icon){
+                fill: rgba(0, 0, 0, 0.5);
+                aspect-ratio: 1/1;
+                width: 30px;
+                &:hover{
+                    cursor: pointer;
+                    fill:rgb(255, 255, 255);
+                }
+            }
+        }
+        :global(#{$class}-menu-icon){
+            // position: absolute;
+            // bottom: 0;
+            align-self: center;            
+        }
         :global(#{$class}-main) {
             position: relative;
             height: 100%;
@@ -146,6 +173,9 @@
             padding: 20px;
             z-index: 1000;
             height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             background-color: rgb(255, 255, 255);
             opacity: 0;
             visibility: hidden;

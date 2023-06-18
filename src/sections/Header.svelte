@@ -107,7 +107,7 @@
           <Icon name="Instagramm"class="instagramm"/>
           <Icon name="Mail" class="mail"/>
           <Icon name="Telegramm" class="telegramm"/>
-      </div>
+        </div>
       </div>
     </aside>
   </Container>
