@@ -8,7 +8,10 @@
     import Quetions from '../../sections/Quetions.svelte';
     import Footer from '../../sections/Footer.svelte';
     import MainSaitBar from '../../sections/MainSaitBar.svelte';
-    import HeaderMobile from '../../sections/Header__mobile.svelte';
+    import HeaderMobile from '../../sections/section_mobile/Header__mobile.svelte';
+    import WhyweMobile from '../../sections/section_mobile/Whywe__mobile.svelte';
+    import DesignStagerMobile from '../../sections/section_mobile/DesignStager__mobile.svelte';
+    import PostProjectSupportObjectMobile from '../../sections/section_mobile/Post-project_support_object__mobile.svelte';
     import  {  Cursor  }  from  'curseur';
 
     let innerWidth;
@@ -21,6 +24,9 @@
 
 {#if innerWidth<759.98}
     <HeaderMobile/>
+    <WhyweMobile/>
+    <DesignStagerMobile/>
+    <PostProjectSupportObjectMobile/>
 {:else}
     <Header />
     <MainSaitBar/>

@@ -1,17 +1,17 @@
 <script>
-    import Container from "../components/Container.svelte";
-    import Button from "../components/Button.svelte";
-    import Link from "../components/Link.svelte";
-    import Title from "../components/Title.svelte";
-    import Text from "../components/Text.svelte";
-    import NavigationMobile from "../components/Navigation__mobile.svelte";
-    import { openmenu } from "../lib/stores/header_menu.js";
-    import Icon from "../components/Icon.svelte";
-    import LogoMobile from "../components/Logo_Mobile.svelte";
-    import BurgerMobile from "../components/Burger__mobile.svelte";
-    import Navigation from "../components/Navigation.svelte";
-    import LogoMobileBlack from "../components/Logo_MobileBlack.svelte";
-    import LinkBlack from "../components/Link__black.svelte";
+    import Container from "../../components/Container.svelte";
+    import Button from "../../components/Button.svelte";
+    import Link from "../../components/Link.svelte";
+    import Title from "../../components/Title.svelte";
+    import Text from "../../components/Text.svelte";
+    import NavigationMobile from "../../components/Navigation__mobile.svelte";
+    import { openmenu } from "../../lib/stores/header_menu.js";
+    import Icon from "../../components/Icon.svelte";
+    import LogoMobile from "../../components/Logo_Mobile.svelte";
+    import BurgerMobile from "../../components/Burger__mobile.svelte";
+    import Navigation from "../../components/Navigation.svelte";
+    import LogoMobileBlack from "../../components/Logo_MobileBlack.svelte";
+    import LinkBlack from "../../components/Link__black.svelte";
     let Background_img = "/images/Header/Background.png";
 
     export let openmenubox;
