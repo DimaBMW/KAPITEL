@@ -12,6 +12,9 @@
     import WhyweMobile from '../../sections/section_mobile/Whywe__mobile.svelte';
     import DesignStagerMobile from '../../sections/section_mobile/DesignStager__mobile.svelte';
     import PostProjectSupportObjectMobile from '../../sections/section_mobile/Post-project_support_object__mobile.svelte';
+    import ProjectDirectoriesMobile from '../../sections/section_mobile/ProjectDirectories__mobile.svelte';
+    import PartnersMobile from '../../sections/section_mobile/Partners__mobile.svelte';
+    import FooterMobile from '../../sections/section_mobile/Footer_mobile.svelte';
     import  {  Cursor  }  from  'curseur';
 
     let innerWidth;
@@ -27,6 +30,9 @@
     <WhyweMobile/>
     <DesignStagerMobile/>
     <PostProjectSupportObjectMobile/>
+    <ProjectDirectoriesMobile/>
+    <PartnersMobile/>
+    <FooterMobile/>
 {:else}
     <Header />
     <MainSaitBar/>

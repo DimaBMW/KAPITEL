@@ -10,7 +10,7 @@
 </script>
 
 <button
-    class="button {isMobile? 'mobile':''} {$$props.class ? $$props.class : ''}"
+    class="button {isMobile? 'mobile':''} {$$props.class}"
     type={$$props.type ? $$props.type : "button"}
 >
     <slot />
