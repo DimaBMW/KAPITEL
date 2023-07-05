@@ -27,6 +27,10 @@
 <style lang="scss">
     $breakpoints-4k:3840px;
     $breakpoints-2k:2559.98px;
+    $breakpoints-laptop:(
+        mx:1440.98px,
+        mn:1024.98px,
+    );
     $class: '.nav';
     #{$class} {
       height: 100px;
@@ -88,6 +92,7 @@
                     height: 100%;
                     display: flex;
                     align-items: center;
+                         cursor: crosshair;
                 }
 
                 &.hasSubnav::before {

@@ -124,6 +124,10 @@
 <style lang="scss">
     $breakpoints-4k: 3839.98px;
     $breakpoints-2k: 2559.98px;
+    $breakpoints-laptop:(
+            mx:1440.98px,
+            mn:1024.98px,
+    );
     $class: ".designstages";
     #{$class} {
         :global(.why-title) {
@@ -302,6 +306,9 @@
                 left: 1.4%;
                 top: 30%;
             }
+            @include mediaQueryMinMax(map-get($breakpoints-laptop, mn),map-get($breakpoints-laptop, mx)){
+                left: 2.4%;
+            }
         }
         :global(.content-title__2) {
             text-align: left;
@@ -329,6 +336,9 @@
             @include mediaQueryMin($breakpoints-2k) {
                 left: 1.4%;
                 top: 71%;
+            }
+            @include mediaQueryMinMax(map-get($breakpoints-laptop, mn),map-get($breakpoints-laptop, mx)){
+                left: 2.4%;
             }
         }
         :global(.content-img) {

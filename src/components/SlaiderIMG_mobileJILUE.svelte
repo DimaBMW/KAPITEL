@@ -21,34 +21,101 @@
             after: 0
         }
     };
-</script>
 
+    let innerWidth;
+</script>
+<svelte:window bind:innerWidth />
 <div class="glide2 {$$props.class}">
     <div data-glide-el="track" class="glide__track">
         <ul class="glide__slides">
             <li class="glide__slide glide__slide--active">
                 <div class="glide__slide-box">
                     <img alt="проект" src="/images/Slider/IMG_2.png" class="slide-img">
+                    {#if innerWidth > 767.98 && innerWidth < 1024.98}
+                        <div class="glide__slide-box__text">
+                            <div  class="box-title">
+                                <TitleMobile>Объект П231</TitleMobile>
+                            </div>
+                            <div  class="box-title">
+                                <TitleMobile>103.5 м2</TitleMobile>
+                            </div>
+                            <div  class="box-title">
+                                <TextMobile>Архитектурная студия Капитель работает в Краснодаре с 1872 года. У нас большой опыт в проектировании и 100 реализованных объектов.</TextMobile>
+                            </div>
+                        </div>
+                    {/if}
                 </div>
             </li>
             <li class="slider__frame glide__slide">
                 <div class="glide__slide-box">
                     <img alt="проект" src="/images/Slider/IMG_2.png" class="slide-img">
+                    {#if innerWidth > 767.98 && innerWidth < 1024.98}
+                        <div class="glide__slide-box__text">
+                            <div  class="box-title">
+                                <TitleMobile>Объект П231</TitleMobile>
+                            </div>
+                            <div  class="box-title">
+                                <TitleMobile>103.5 м2</TitleMobile>
+                            </div>
+                            <div  class="box-title">
+                                <TextMobile>Архитектурная студия Капитель работает в Краснодаре с 1872 года. У нас большой опыт в проектировании и 100 реализованных объектов.</TextMobile>
+                            </div>
+                        </div>
+                    {/if}
                 </div>
             </li>
             <li class="slider__frame glide__slide">
                 <div class="glide__slide-box">
                     <img alt="проект" src="/images/Slider/IMG_2.png" class="slide-img">
+                    {#if innerWidth > 767.98 && innerWidth < 1024.98}
+                        <div class="glide__slide-box__text">
+                            <div  class="box-title">
+                                <TitleMobile>Объект П231</TitleMobile>
+                            </div>
+                            <div  class="box-title">
+                                <TitleMobile>103.5 м2</TitleMobile>
+                            </div>
+                            <div  class="box-title">
+                                <TextMobile>Архитектурная студия Капитель работает в Краснодаре с 1872 года. У нас большой опыт в проектировании и 100 реализованных объектов.</TextMobile>
+                            </div>
+                        </div>
+                    {/if}
                 </div>
             </li>
             <li class="slider__frame glide__slide">
                 <div class="glide__slide-box">
                     <img alt="проект" src="/images/Slider/IMG_2.png" class="slide-img">
+                    {#if innerWidth > 767.98 && innerWidth < 1024.98}
+                        <div class="glide__slide-box__text">
+                            <div  class="box-title">
+                                <TitleMobile>Объект П231</TitleMobile>
+                            </div>
+                            <div  class="box-title">
+                                <TitleMobile>103.5 м2</TitleMobile>
+                            </div>
+                            <div  class="box-title">
+                                <TextMobile>Архитектурная студия Капитель работает в Краснодаре с 1872 года. У нас большой опыт в проектировании и 100 реализованных объектов.</TextMobile>
+                            </div>
+                        </div>
+                    {/if}
                 </div> 
             </li>
             <li class="slider__frame glide__slide">
                 <div class="glide__slide-box">
                     <img alt="проект" src="/images/Slider/IMG_2.png" class="slide-img">
+                    {#if innerWidth > 767.98 && innerWidth < 1024.98}
+                        <div class="glide__slide-box__text">
+                            <div  class="box-title">
+                                <TitleMobile>Объект П231</TitleMobile>
+                            </div>
+                            <div  class="box-title">
+                                <TitleMobile>103.5 м2</TitleMobile>
+                            </div>
+                            <div  class="box-title">
+                                <TextMobile>Архитектурная студия Капитель работает в Краснодаре с 1872 года. У нас большой опыт в проектировании и 100 реализованных объектов.</TextMobile>
+                            </div>
+                        </div>
+                    {/if}
                 </div>
             </li>
         </ul>
@@ -70,6 +137,10 @@
 <style lang="scss">
     $breakpoints-4k: 3839.98px;
     $breakpoints-2k: 2559.98px;
+    $breakpoints: (
+        md: 768px,
+        xl: 1024px,
+    );
     .glide2 {
         // position: absolute;
         right: 0;
@@ -78,10 +149,17 @@
         align-items: center;
         // background-color: #000000;
     }
+    .box-title{
+        opacity: 0;
+        transition: all .70s ease;
+    }
     .glide__slide{
         display: flex;
         width:100%;
         height: 350px;
+        @include mediaQueryMin(map-get($breakpoints, md)){
+            height: 600px;
+        }
         padding: 40px 0px 40px 0px;
         transition: all .50s ease;
         align-items: center;
@@ -89,6 +167,9 @@
     }
     .slide-img{
         width: 100%; height: 320px;
+        @include mediaQueryMin(map-get($breakpoints, md)){
+            height: 450px;
+        }
     }
     .glide__slides{
         margin-bottom: 60px;
@@ -130,6 +211,10 @@
             .icon{
                 opacity: 1;
             }
+        }
+        .box-title{
+            opacity: 1;
+            transition: all .70s ease;
         }
     }
 

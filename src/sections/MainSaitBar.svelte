@@ -82,6 +82,10 @@
 
 <style lang="scss">
     $breakpoints-2k:2559.98px;
+    $breakpoints-laptop:(
+        mx:1440.98px,
+        mn:1024.98px,
+    );
     $class: ".saitbar";
     #{$class} {
         :global(#{$class}-conainer) {

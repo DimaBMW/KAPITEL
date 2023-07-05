@@ -14,12 +14,28 @@
     import LinkBlack from "../../components/Link__black.svelte";
     let Background_img = "/images/Header/Background.png";
 
+    function disableScroll() {
+        document.body.style.overflow = "hidden";
+    }
+
+    function enableScroll() {
+        document.body.style.overflow = "auto";
+    }
+
     export let openmenubox;
     const open = () => {
         openmenubox = !openmenubox;
+        if (!openmenubox) {
+            enableScroll();
+        } else {
+            disableScroll();
+        }
     };
+
+    let innerWidth;
 </script>
 
+<svelte:window bind:innerWidth />
 <header
     class="header"
     id="header"
@@ -29,9 +45,36 @@
         <section class="header-main">
             <div class="header-cap">
                 <LogoMobile />
-                <Link clas="header-cap__link" href="tel:+79891412808"
-                    >+7 (989) 141-28-08</Link
-                >
+                {#if innerWidth > 767.98 && innerWidth < 1024.98}
+                    <Navigation
+                        class="header-navigation"
+                        links={[
+                            {
+                                name: "Проекты",
+                                href: "/project",
+                            },
+                            {
+                                name: "О нас",
+                                href: "/about_Us",
+                            },
+                            {
+                                name: "Работы",
+                                href: "/works",
+                            },
+                            {
+                                name: "Контакты",
+                                href: "/contacts",
+                            },
+                        ]}
+                    />
+                    <Link clas="header-cap__link" href="tel:+79891412808"
+                        >+7 (989) 141-28-08</Link
+                    >
+                {:else}
+                    <Link clas="header-cap__link" href="tel:+79891412808"
+                        >+7 (989) 141-28-08</Link
+                    >
+                {/if}
                 <button class="header-cap__menu" on:click={open}>
                     <BurgerMobile />
                 </button>
@@ -39,7 +82,8 @@
             <div class="header-content">
                 <div class="header-content__textbox">
                     <Title class="header-content__text-title"
-                        >Архитектурно-проектная организация Капитель — надежная архитектура полного цикла</Title
+                        >Архитектурно-проектная организация Капитель — надежная
+                        архитектура полного цикла</Title
                     >
                 </div>
                 <Text class="header-content__text">
@@ -53,46 +97,81 @@
     <div class="header-cap__menu-box {openmenubox ? 'is-active' : ''}">
         <div>
             <div class="header-menu-cap">
-                <LogoMobileBlack class="header-logo {openmenubox ? 'is-active' : ''}"/>
-                <LinkBlack clas="header-cap__link-black" href="tel:+79891412808"
-                >+7 (989) 141-28-08</LinkBlack
-                >
+                <LogoMobileBlack
+                    class="header-logo {openmenubox ? 'is-active' : ''}"
+                />
+                {#if innerWidth > 767.98 && innerWidth < 1024.98}
+                    <Navigation
+                        class="header-navigation2"
+                        links={[
+                            {
+                                name: "Проекты",
+                                href: "/project",
+                            },
+                            {
+                                name: "О нас",
+                                href: "/about_Us",
+                            },
+                            {
+                                name: "Работы",
+                                href: "/works",
+                            },
+                            {
+                                name: "Контакты",
+                                href: "/contacts",
+                            },
+                        ]}
+                    />
+                    <LinkBlack
+                        clas="header-cap__link-black"
+                        href="tel:+79891412808">+7 (989) 141-28-08</LinkBlack
+                    >
+                {:else}
+                    <LinkBlack
+                        clas="header-cap__link-black"
+                        href="tel:+79891412808">+7 (989) 141-28-08</LinkBlack
+                    >
+                {/if}
             </div>
             <div class="header-menu-content">
                 <NavigationMobile
-                class="header-navigation"
-                links={[
-                  {
-                    name: "Проекты",
-                    href: "/project",
-                  },
-                  {
-                    name: "О нас",
-                    href: "/about_Us",
-                  },
-                  {
-                    name: "Работы",
-                    href: "/works",
-                  },
-                  {
-                    name: "Контакты",
-                    href: "/contacts",
-                  },
-                ]}
-              />
+                    class="header-navigation"
+                    links={[
+                        {
+                            name: "Проекты",
+                            href: "/project",
+                        },
+                        {
+                            name: "О нас",
+                            href: "/about_Us",
+                        },
+                        {
+                            name: "Работы",
+                            href: "/works",
+                        },
+                        {
+                            name: "Контакты",
+                            href: "/contacts",
+                        },
+                    ]}
+                />
             </div>
         </div>
         <div class="header-menu-icon">
             <div class="footer-information__icons">
-              <Icon name="Instagramm"class="instagramm"/>
-              <Icon name="Mail" class="mail"/>
-              <Icon name="Telegramm" class="telegramm"/>
+                <Icon name="Instagramm" class="instagramm" />
+                <Icon name="Mail" class="mail" />
+                <Icon name="Telegramm" class="telegramm" />
             </div>
-          </div>
+        </div>
     </div>
 </header>
 
 <style lang="scss">
+    $breakpoints: (
+        md: 768px,
+        xl: 1024px,
+    );
     $class: ".header";
     #{$class} {
         width: 100%;
@@ -113,24 +192,45 @@
             padding: 20px 20px;
             margin: 0 0;
         }
-        :global(.footer-information__icons){
+        :global(#{$class}-navigation) {
+            border: none;
+        }
+        :global(#{$class}-navigation2) {
+            border: none;
+            :global(.link) {
+                color: #000000;
+                font-family: "Montserrat";
+                font-style: normal;
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 17px;
+            }
+        }
+        :global(.mobile-btn){
+            border: 2px solid #ffffff;
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                width: 300px;
+                height: 50px;
+            }
+        }
+        :global(.footer-information__icons) {
             display: flex;
             gap: 20px;
             align-self: center;
-            :global(.icon){
+            :global(.icon) {
                 fill: rgba(0, 0, 0, 0.5);
                 aspect-ratio: 1/1;
                 width: 30px;
-                &:hover{
+                &:hover {
                     cursor: pointer;
-                    fill:rgb(255, 255, 255);
+                    fill: rgb(255, 255, 255);
                 }
             }
         }
-        :global(#{$class}-menu-icon){
+        :global(#{$class}-menu-icon) {
             // position: absolute;
             // bottom: 0;
-            align-self: center;            
+            align-self: center;
         }
         :global(#{$class}-main) {
             position: relative;
@@ -139,10 +239,10 @@
 
         :global(#{$class}-cap) {
             display: flex;
-            align-items:center;
+            align-items: center;
             justify-content: space-between;
         }
-        :global(#{$class}-content){
+        :global(#{$class}-content) {
             height: 70%;
             display: flex;
             flex-direction: column;
@@ -156,7 +256,7 @@
             line-height: 17px;
             color: #ffffff;
         }
-        :global(#{$class}-logo){
+        :global(#{$class}-logo) {
             padding: 0px 20px 0px 0px;
         }
         :global(#{$class}-cap__menu) {
@@ -179,16 +279,15 @@
             background-color: rgb(255, 255, 255);
             opacity: 0;
             visibility: hidden;
-            transition: all .50s ease;
+            transition: all 0.5s ease;
         }
-        :global(#{$class}-menu-cap){
+        :global(#{$class}-menu-cap) {
             display: flex;
             align-items: center;
             padding-right: 80px;
             justify-content: space-between;
         }
-        :global(#{$class}-menu-content){
-
+        :global(#{$class}-menu-content) {
         }
         :global(#{$class}-cap__menu-box.is-active) {
             opacity: 1;
@@ -200,6 +299,11 @@
             font-weight: 600;
             line-height: 29px;
             color: #ffffff;
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                font-size: 40px;
+                font-weight: 300;
+                line-height: 40px;
+            }
         }
         :global(#{$class}-content__text) {
             text-align: left;
@@ -211,6 +315,9 @@
             line-height: 16px;
             color: #ffffff;
             padding-top: 60px;
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                display: none;
+            }
         }
     }
 </style>

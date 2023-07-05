@@ -93,6 +93,10 @@
 </section>
 
 <style lang="scss">
+    $breakpoints: (
+        md: 768px,
+        xl: 1024px,
+    );
     $class: ".partners";
     #{$class} {
         position: relative;
@@ -102,6 +106,9 @@
             padding: 50px 20px 50px 20px;
             position: relative;
             z-index: 1;
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                padding: 50px 40px 50px 40px;
+            }
         }
         :global(#{$class}-container__quetions){
             display: flex;
@@ -113,6 +120,9 @@
             flex-direction: column;
             gap: 50px;
             position: relative;
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                gap: 20px;
+            }
             :global(.title) {
                 font-family: "Montserrat";
                 font-style: normal;
@@ -123,6 +133,9 @@
                 font-size: 18px;
                 line-height: 22px;
                 text-transform: uppercase;
+                @include mediaQueryMin(map-get($breakpoints, md)){
+                    font-size: 18px;
+                }
             }
             :global(.projectsuport-select){
                 border-top: 0.5px solid #7F7F7F;
@@ -144,6 +157,12 @@
                 padding-left: 20px;
                 font-size: 14px;
                 line-height: 16px;
+                @include mediaQueryMin(map-get($breakpoints, md)){
+                    font-size: 14px;
+                    line-height: 24px;
+                    padding-left: 40px;
+                    padding-right: 40px;
+                }
             }
         }
         :global(#{$class}-container__text::after) {
@@ -169,16 +188,27 @@
             display: flex;
             flex-direction: column;
             gap: 50px;
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                padding: 50px 40px 50px 0px;
+            }
         }
         :global(#{$class}-container__img-rows1) {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                padding: 0px 40px 0px 0px;
+                justify-content: space-around;
+            }
         }
         :global(#{$class}-container__img-rows2) {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                padding: 0px 40px 0px 0px;
+                justify-content: space-around;
+            }
         }
         :global(.content-img) {
             width: 150px;

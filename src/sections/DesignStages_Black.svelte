@@ -5,19 +5,27 @@
     import Text from "../components/Text.svelte";
     import Image from "../components/Image.svelte";
     import Button_2 from "../components/Button_2.svelte";
-
+    import viewport from "../lib/stores/useViewportAction.js";
     import StickyContent from '../components/StickyContent.svelte';//для фиксации жлементов на странице
 
     let stickToTop = true;
     let innerWidth;
+
+    let enterViewport=false;
+    function enterViewpor(){
+        enterViewport=true;
+    }
+    function exitViewpor(){
+        enterViewport=false;
+    }
 </script>
 
 <svelte:window bind:innerWidth />
 <section class="designstages" id="designstages">
     <Container class="designstages-container">
         {#if innerWidth > 3839.98}
-            <Main class="designstages-main">
-                <div class="designstages-main__rows" />
+            <Main class="designstages-main" >
+                <div class="designstages-main__rows"/>
                 <div class="designstages-main__rows2">
                     <div class="designstages-content">
                         <Title class="content-title">Этап 3</Title>
@@ -63,7 +71,7 @@
             </Main>
         {:else}
             <Main class="designstages-main">
-                <div class="designstages-content">
+                <div class="designstages-content" use:viewport on:exitViewport="{exitViewpor}" on:enterViewport="{enterViewpor}">
                     <Title class="content-title">Этап 3</Title>
                     <Image
                         class="content-img"
@@ -108,7 +116,7 @@
                 <!-- <div class="designstages-button">
                     <Button_2>ОСТАВИТЬ ЗАЯВКУ</Button_2>
                 </div> -->
-                <StickyContent>
+                <StickyContent class="statick-btn {enterViewport?'statick-btn__active':''}">
                     
                 </StickyContent>
         </aside>
@@ -120,6 +128,13 @@
     $breakpoints-2k: 2559.98px;
     $class: ".designstages";
     #{$class} {
+        :global(.statick-btn){
+            opacity: 0;
+            transition: all .50s ease;
+        }
+        :global(.statick-btn__active){
+            opacity: 1;
+        }
         :global(.designstages-title) {
             font-family: "Montserrat";
             font-style: normal;

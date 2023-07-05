@@ -9,6 +9,10 @@
 <style lang="scss">
     $breakpoints-4k:3840px;
     $breakpoints-2k:2559.98px;
+    $breakpoints-laptop:(
+        mx:1440.98px,
+        mn:1024.98px,
+    );
     $class: '.link';
     #{$class} {
         position: relative;
@@ -19,6 +23,7 @@
         font-size: 14px;
         line-height: 17px;
         color: #FFFFFF;
+        cursor: crosshair;
         line-height: calc($line-h + 5px);
         transition: all .2s linear;
         padding-bottom: 5px;
@@ -27,6 +32,9 @@
         }
         @include mediaQueryMin($breakpoints-2k){
             font-size: 18px;
+        }
+        @include mediaQueryMinMax(map-get($breakpoints-laptop, mn),map-get($breakpoints-laptop, mx)){
+            font-size:14px;
         }
         &::after {
             content: '';

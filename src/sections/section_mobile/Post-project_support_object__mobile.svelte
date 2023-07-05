@@ -11,7 +11,7 @@
     <Container class="designstages-container">
         <div class="title ttt">
             <Title class="title"
-                >4 этапа проектирования — от эскиза до реализации
+                >Постпроектное сопровождение объекта
             </Title>
         </div>
         <Container class="designstages-container-box">
@@ -71,12 +71,19 @@
 </section>
 
 <style lang="scss">
+    $breakpoints: (
+        md: 768px,
+        xl: 1024px,
+    );
     $class: ".designstages";
     #{$class} {
         :global(.daw){
             margin-top: 50px;
             border: 1px solid #000000;
             color:black;
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                width: 100%;
+            }
             &::after{
                 background-color: none;
             }
@@ -84,7 +91,9 @@
         :global(#{$class}-container) {
             width: 100%;
             padding: 20px 20px 50px 20px;
-            margin: 0 0;
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                padding: 50px 40px 50px 40px;
+            }
             // text-align: left;
             position: relative;
             z-index: 1;
@@ -103,6 +112,10 @@
             font-size: 18px;
             line-height: 22px;
             text-transform: uppercase;
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                font-size: 28px;
+                width: 80%;
+            }
         }
         :global(.ttt::after){
                 content: "";
@@ -112,6 +125,9 @@
                 width: 17px;
                 border-bottom: 0.5px solid #000000;
                 transform: rotate(45deg);
+                @include mediaQueryMin(map-get($breakpoints, md)){
+                    left: 40px;
+                }
         }
         :global(#{$class}-container::after) {
             content: "";
@@ -121,6 +137,9 @@
             width: 79px;
             border-bottom: 0.5px solid #000000;
             transform: rotate(180deg);
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                left: 35px;
+            }
         }
         :global(#{$class}-container::before) {
             content: "";
@@ -130,6 +149,9 @@
             width: 59px;
             border-bottom: 0.5px solid #000000;
             transform: rotate(90deg);
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                left: 20px;
+            }
         }
         :global(#{$class}-container-box__img) {
             height: 150px;

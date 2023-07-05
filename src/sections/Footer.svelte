@@ -48,6 +48,10 @@
 </footer><style lang="scss">
     $breakpoints-4k: 3839.98px;
     $breakpoints-2k:2559.98px;
+    $breakpoints-laptop:(
+            mx:1440.98px,
+            mn:1024.98px,
+    );
     $class: ".footer";
     #{$class} {
         display: flex;
@@ -145,6 +149,9 @@
                 
             }
             @include mediaQueryMin($breakpoints-2k){
+                min-height: 400px;
+            }
+            @include mediaQueryMinMax(map-get($breakpoints-laptop, mn),map-get($breakpoints-laptop, mx)){
                 min-height: 400px;
             }
         }

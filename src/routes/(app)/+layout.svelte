@@ -25,7 +25,7 @@
 </svelte:head>
 <svelte:window bind:innerWidth />
 
-{#if innerWidth<759.98}
+{#if innerWidth<1024.98}
     <HeaderMobile/>
     <WhyweMobile/>
     <DesignStagerMobile/>

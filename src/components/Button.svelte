@@ -18,6 +18,14 @@
 
 <style lang="scss">
     $breakpoints-2k: 2559.98px;
+    $breakpoints: (
+        md: 768px,
+        xl: 1024px,
+    );
+    $breakpoints-laptop:(
+        mx:1440.98px,
+        mn:1024.98px,
+    );
     $class: ".button";
     #{$class} {
         position: relative;
@@ -35,6 +43,7 @@
         font-weight: 500;
         font-size: 14px;
         line-height: 17px;
+        margin-top: 30px;
         text-transform: uppercase;
         color: #ffffff;
         cursor: crosshair;
@@ -45,6 +54,14 @@
         @include mediaQueryMin($breakpoints-2k) {
             font-size: 18px;
             width: 230px;
+        }
+        @include mediaQueryMin(map-get($breakpoints, md)) {
+            font-size: 18px;
+            width: 230px;
+            align-self: start;
+        }
+        @include mediaQueryMinMax(map-get($breakpoints-laptop, mn),map-get($breakpoints-laptop, mx)){
+            font-size:14px;
         }
     }
     .button::after {

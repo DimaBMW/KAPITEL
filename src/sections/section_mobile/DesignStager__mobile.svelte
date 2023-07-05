@@ -5,14 +5,15 @@
     import TextMobile from "../../components/Text_mobile.svelte";
     import Title from "../../components/Title.svelte";
     import Button from "../../components/Button.svelte";
+    import Text from "../../components/Text.svelte";
 </script>
 
 <section class="designstages" id="designstages">
     <Container class="designstages-container">
         <div class="title ttt">
-            <Title class="title"
+            <Text class="title"
                 >4 этапа проектирования — от эскиза до реализации
-            </Title>
+            </Text>
         </div>
         <Container class="designstages-container-box">
             <Image
@@ -91,10 +92,15 @@
 </section>
 
 <style lang="scss">
+    $breakpoints: (
+        md: 768px,
+        xl: 1024px,
+    );
     $class: ".designstages";
     #{$class} {
         :global(.daw){
-            margin-top: 50px;
+            width: 100%;
+            margin-top: 100px;
             border: 1px solid #000000;
             color:black;
             &::after{
@@ -104,6 +110,9 @@
         :global(#{$class}-container) {
             width: 100%;
             padding: 20px 20px 50px 20px;
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                padding: 50px 40px 50px 40px;
+            }
             margin: 0 0;
             // text-align: left;
             position: relative;
@@ -123,6 +132,11 @@
             font-size: 18px;
             line-height: 22px;
             text-transform: uppercase;
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                font-size: 28px;
+                line-height: 30px;
+                padding: 0px 10px 0px 20px;
+            }
         }
         :global(.ttt::after){
                 content: "";
@@ -132,6 +146,10 @@
                 width: 17px;
                 border-bottom: 0.5px solid #000000;
                 transform: rotate(45deg);
+                @include mediaQueryMin(map-get($breakpoints, md)){
+                    top: 30px;
+                    left: 41px;
+                }
         }
         :global(#{$class}-container::after) {
             content: "";
@@ -141,6 +159,10 @@
             width: 79px;
             border-bottom: 0.5px solid #000000;
             transform: rotate(180deg);
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                top: 30px;
+                left: 41px;
+            }
         }
         :global(#{$class}-container::before) {
             content: "";
@@ -150,26 +172,51 @@
             width: 59px;
             border-bottom: 0.5px solid #000000;
             transform: rotate(90deg);
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                top: 45px;
+                left: 21px;
+            }
         }
         :global(#{$class}-container-box__img) {
             height: 150px;
             padding-left: 20px;
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                height: 250px;
+                padding-left: 80px;
+                padding-right: 40px;
+            }
         }
         :global(#{$class}-container-box__selector){
             padding-left: 20px;
             position: relative;
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                padding-left: 80px;
+                padding-right: 40px;
+            }
         }
         :global(#{$class}-container-box__selector2){
             padding-left: 20px;
             position: relative;
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                padding-left: 80px;
+                padding-right: 40px;
+            }
         }
         :global(#{$class}-container-box__selector3){
             padding-left: 20px;
             position: relative;
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                padding-left: 80px;
+                padding-right: 40px;
+            }
         }
         :global(#{$class}-container-box__selector4){
             padding-left: 20px;
             position: relative;
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                padding-left: 80px;
+                padding-right: 40px;
+            }
         }
         :global(#{$class}-container-box__selector::after) {
             content: "";
@@ -188,6 +235,10 @@
             width: 20%;
             border-bottom: 0.5px solid #000000;
             transform: rotate(90deg);
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                left: -45px;
+                width: 19%;
+            }
         }
         :global(#{$class}-container-box__selector2::after) {
             content: "";
@@ -206,6 +257,10 @@
             width: 20%;
             border-bottom: 0.5px solid #000000;
             transform: rotate(90deg);
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                left: -45px;
+                width: 19%;
+            }
         }
         :global(#{$class}-container-box__selector3::after) {
             content: "";
@@ -224,6 +279,10 @@
             width: 20%;
             border-bottom: 0.5px solid #000000;
             transform: rotate(90deg);
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                left: -45px;
+                width: 19%;
+            }
         }
         :global(#{$class}-container-box__selector4::after) {
             content: "";
@@ -242,6 +301,10 @@
             width: 20%;
             border-bottom: 0.5px solid #000000;
             transform: rotate(90deg);
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                left: -45px;
+                width: 19%;
+            }
         }
         :global(#{$class}-container-box__selectorr::before) {
             content: "";
@@ -251,6 +314,9 @@
             width: 17px;
             border-bottom: 0.5px solid #000000;
             transform: rotate(45deg);
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                left: -67px;
+            }
         }
         :global(#{$class}-container-box__selectorr::after) {
             content: "Этап 1";
@@ -264,6 +330,10 @@
             position: absolute;
             width: 77px;
             transform: rotate(-90deg);
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                left: -98px;
+                bottom:120px;
+            }
         }
         :global(#{$class}-container-box__selectorr2::before) {
             content: "";
@@ -273,6 +343,9 @@
             width: 17px;
             border-bottom: 0.5px solid #000000;
             transform: rotate(45deg);
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                left: -67px;
+            }
         }
         :global(#{$class}-container-box__selectorr2::after) {
             content: "Этап 2";
@@ -286,6 +359,10 @@
             position: absolute;
             width: 77px;
             transform: rotate(-90deg);
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                left: -98px;
+                bottom:120px;
+            }
         }
         :global(#{$class}-container-box__selectorr3::before) {
             content: "";
@@ -295,9 +372,12 @@
             width: 17px;
             border-bottom: 0.5px solid #000000;
             transform: rotate(45deg);
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                left: -67px;
+            }
         }
         :global(#{$class}-container-box__selectorr3::after) {
-            content: "Этап 2";
+            content: "Этап 3";
             bottom:80px;
             left: -54px;
             letter-spacing: 2px;
@@ -308,6 +388,10 @@
             position: absolute;
             width: 77px;
             transform: rotate(-90deg);
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                left: -98px;
+                bottom:120px;
+            }
         }
         :global(#{$class}-container-box__selectorr4::before) {
             content: "";
@@ -317,9 +401,12 @@
             width: 17px;
             border-bottom: 0.5px solid #000000;
             transform: rotate(45deg);
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                left: -67px;
+            }
         }
         :global(#{$class}-container-box__selectorr4::after) {
-            content: "Этап 2";
+            content: "Этап 4";
             bottom:80px;
             left: -54px;
             letter-spacing: 2px;
@@ -330,6 +417,10 @@
             position: absolute;
             width: 77px;
             transform: rotate(-90deg);
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                left: -98px;
+                bottom:120px;
+            }
         }
     }
 </style>

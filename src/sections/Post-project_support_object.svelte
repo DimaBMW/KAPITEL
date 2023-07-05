@@ -311,6 +311,10 @@
 <style lang="scss">
     $breakpoints-4k: 3839.98px;
     $breakpoints-2k: 2559.98px;
+    $breakpoints-laptop:(
+            mx:1440.98px,
+            mn:1024.98px,
+    );
     $class: ".projectsuport";
     #{$class} {
         width: 100%;
@@ -325,12 +329,11 @@
             margin: 0 0;
             width: 100%;
             background-color: #f5f5f5;
-            @include mediaQueryMin($breakpoints-4k) {
-                padding: 0px 100px 0px 100px;
-                display: flex;
-            }
             @include mediaQueryMin($breakpoints-2k) {
                 padding: 100px 40px 100px 40px;
+            }
+            @include mediaQueryMinMax(map-get($breakpoints-laptop, mn),map-get($breakpoints-laptop, mx)){
+                padding: 50px 0px 50px 40px;;
             }
         }
         :global(#{$class}-white-contenet) {

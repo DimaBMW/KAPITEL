@@ -25,6 +25,7 @@
         min-height: 350px;
         min-width: 330px;
         display: flex;
+        padding: 0px 20px 0px 20px;
         flex-direction: column;
         gap: 50px;
         @include mediaQueryMin($breakpoints-4k) {

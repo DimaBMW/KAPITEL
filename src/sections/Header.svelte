@@ -22,7 +22,6 @@
     onMount(() => {
         isMobile = window.innerWidth <= 375.98;
     });
-
 </script>
 
 <svelte:window bind:innerWidth />
@@ -41,34 +40,36 @@
         </div>
       </div>
       <div class="header-cols__2">
-        <div class="header-cols__2-nav">
-          <Navigation
-            class="header-navigation"
-            links={[
-              {
-                name: "Проекты",
-                href: "/project",
-              },
-              {
-                name: "О нас",
-                href: "/about_Us",
-              },
-              {
-                name: "Работы",
-                href: "/works",
-              },
-              {
-                name: "Контакты",
-                href: "/contacts",
-              },
-            ]}
-          />
-          <div class="header-button">
-            <Button>ОСТАВИТЬ ЗАЯВКУ</Button>
-            <Link clas="sait-bar-link" href="tel:+79891412808"
-              >+7 (989) 141-28-08</Link
-            >
-          </div>
+        <div class="headercols_2-container">
+          <div class="header-cols__2-nav">
+            <Navigation
+              class="header-navigation"
+              links={[
+                {
+                  name: "Проекты",
+                  href: "/project",
+                },
+                {
+                  name: "О нас",
+                  href: "/about_Us",
+                },
+                {
+                  name: "Работы",
+                  href: "/works",
+                },
+                {
+                  name: "Контакты",
+                  href: "/contacts",
+                },
+              ]}
+            />
+            <div class="header-button">
+              <Button class="header-btn">ОСТАВИТЬ ЗАЯВКУ</Button>
+              <Link clas="sait-bar-link" href="tel:+79891412808"
+                >+7 (989) 141-28-08</Link
+              >
+            </div>
+        </div>
         </div>
         <div class="header-text">
           {#if innerWidth > 3839.98}
@@ -115,6 +116,10 @@
 
 <style lang="scss">
   $breakpoints-2k: 2559.98px;
+  $breakpoints-laptop:(
+    mx:1440.98px,
+    mn:1024.98px,
+  );
   $class: ".header";
   #{$class} {
     width: 100%;
@@ -268,6 +273,9 @@
     :global(#{$class}-navigation) {
       position: relative;
       flex: 0 1 60%;
+      @include mediaQueryMinMax(map-get($breakpoints-laptop, mn),map-get($breakpoints-laptop, mx)){
+        flex: 0 1 50%;
+      }
     }
     :global(#{$class}-navigation::before) {
       content: "";
@@ -287,6 +295,10 @@
       justify-content: center;
       border-bottom: 0.5px solid #ffffff95;
       position: relative;
+      @include mediaQueryMinMax(map-get($breakpoints-laptop, mn),map-get($breakpoints-laptop, mx)){
+        flex: 0 1 50%;
+        gap:20px;
+      }
     }
     :global(#{$class}-button::after) {
       content: "";

@@ -31,10 +31,12 @@
     #{$class} {
       height: 100px;
       border-bottom: 0.5px solid #ffffff95;
-      text-align: center;
+      text-align: left;
       align-items: center;
         @include mediaQueryMin($breakpoints-4k){
             height: 200px;
+            display: flex;
+            justify-content: start;
         }
         &-list {
             height: 20px;

@@ -41,6 +41,10 @@
 </footer>
 
 <style lang="scss">
+    $breakpoints: (
+        md: 768px,
+        xl: 1024px,
+    );
     $class: ".footer";
     #{$class} {
         :global(#{$class}-container) {
@@ -53,18 +57,25 @@
             gap: 50px;
             z-index: 1;
             background: #000000;
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                padding: 50px 40px 50px 40px;
+            }
         }
         :global(#{$class}-container-text) {
             display: flex;
             flex-direction: column;
             gap: 50px;
             position: relative;
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                gap: 20px;
+                text-align: left;
+            }
             :global(.title) {
                 font-family: "Montserrat";
                 font-style: normal;
                 font-weight: 600;
                 width: 90%;
-                align-self: center;
+                align-self: left;
                 color: #fff;
                 font-size: 18px;
                 line-height: 22px;
@@ -83,6 +94,25 @@
             display: flex;
             flex-direction: column;
             gap: 50px;
+            :global(.title) {
+                font-family: "Montserrat";
+                font-style: normal;
+                font-weight: 600;
+                width: 90%;
+                align-self: left;
+                color: #fff;
+                font-size: 18px;
+                line-height: 22px;
+                text-transform: uppercase;
+            }
+            :global(.text) {
+                font-family: "Montserrat";
+                font-style: normal;
+                font-weight: 400;
+                color: #fff;
+                font-size: 14px;
+                line-height: 16px;
+            }
         }
         &-information__icons {
             display: flex;
@@ -97,9 +127,18 @@
                 }
             }
         }
+        :global(.inf-content){
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
         :global(.footer-buttno){
-            margin-top: 50px;
             width: 100%;
+            height: 50px;
+            border: 2px solid #fff;
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                width: 98%;
+            }
         }
     }
 </style>

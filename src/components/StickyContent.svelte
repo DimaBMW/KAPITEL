@@ -20,13 +20,13 @@
 <svelte:window bind:scrollY={y} bind:innerWidth/>
 
 
-<section class="my-container" bind:this={el_height}>
+<section class="my-container {$$props.class}" bind:this={el_height}>
     {#if !stickToTop}
         <slot />
     {/if}
     
     <div
-        class="sticky {y>=innerWidth && y<=innerWidth+clientHeighwwwt*1.7 ? 'acti' : ''}"
+        class="sticky"
         class:isStuck
         data-position={stickToTop ? "top" : "bottom"} 
         use:sticky={{ stickToTop }}
@@ -54,11 +54,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        opacity: 0;
-    }
-    .acti{
-        opacity: 1;
-        transition: all .2s eases;
     }
     .sticky[data-position="top"] {
         top: 90px;

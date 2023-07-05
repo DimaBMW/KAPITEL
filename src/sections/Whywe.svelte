@@ -9,32 +9,13 @@
     import scrollama from "scrollama";
 
     let innerWidth;
-
     let scroller;
-
-    onMount(() => {
-        scroller = scrollama();
-
-        scroller
-            .setup({
-                step: ".step",
-                offset: 0.5,
-            })
-            .onStepEnter(handleStepEnter);
-
-        function handleStepEnter(response) {
-            const { index } = response;
-        }
-    });
-
     $:y = 0;
-
     let isAnimating = true;
 
     function animationEnded() {
         isAnimating = false;
     }
-
     let enterViewport=false;
     function enterViewpor(){
         enterViewport=true;
@@ -42,7 +23,7 @@
 
     let isMobile = false;
 
-onMount(() => {
+    onMount(() => {
         isMobile = window.innerWidth <= 375.98;
     });
 </script>
@@ -261,9 +242,13 @@ onMount(() => {
        </svg>
 </section>
 
-<style lang="scss">
+<style  lang="scss">
     $breakpoints-4k: 3839.98px;
     $breakpoints-2k: 2559.98px;
+    $breakpoints-laptop:(
+        mx:1440.98px,
+        mn:1024.98px,
+    );
     $rotate: y;
     $class: ".whywe";
     #{$class} {
@@ -365,11 +350,17 @@ onMount(() => {
             left: -39.1%;
             visibility: hidden;
             opacity: 0;
+            @include mediaQueryMinMax(map-get($breakpoints-laptop, mn),map-get($breakpoints-laptop, mx)){
+                left: -55.1%;
+            }
         }
         :global(.whywe-img-main-container-2) {
             position: absolute;
             top: 26%;
             left: -42.2%;
+            @include mediaQueryMinMax(map-get($breakpoints-laptop, mn),map-get($breakpoints-laptop, mx)){
+                left: -59.1%;
+            }
         }
         :global(.whywe-img-main-container-2.transportactive) {
             visibility: hidden;
@@ -505,6 +496,9 @@ onMount(() => {
             }
             @include mediaQueryMin($breakpoints-4k) {
                 width: 50px;
+            }
+            @include mediaQueryMinMax(map-get($breakpoints-laptop, mn),map-get($breakpoints-laptop, mx)){
+                width: 35px;
             }
             &:hover {
                 cursor: pointer;
@@ -677,6 +671,10 @@ onMount(() => {
             @include mediaQueryMin($breakpoints-2k) {
                 padding-left: 70px;
             }
+            @include mediaQueryMinMax(map-get($breakpoints-laptop, mn),map-get($breakpoints-laptop, mx)){
+                padding-left: 0px;
+            }
+            
         }
         :global(.whywe-black-contnet) {
             padding: 50px 0px;
@@ -708,6 +706,9 @@ onMount(() => {
             position: relative;
             @include mediaQueryMin($breakpoints-2k) {
                 margin-left: 25%;
+            }
+            @include mediaQueryMinMax(map-get($breakpoints-laptop, mn),map-get($breakpoints-laptop, mx)){
+               margin-left: 15%;
             }
         }
         :global(.black-contnet__cols1-4k) {

@@ -147,6 +147,10 @@
 <style lang="scss">
     $breakpoints-4k: 3839.98px;
     $breakpoints-2k: 2559.98px;
+    $breakpoints-laptop:(
+            mx:1440.98px,
+            mn:1024.98px,
+    );
     $class: ".projecdirection";
     #{$class} {
         :global(#{$class}-container) {
@@ -179,6 +183,10 @@
                 width: 400px;
                 height: 620px;
             }
+            @include mediaQueryMinMax(map-get($breakpoints-laptop, mn),map-get($breakpoints-laptop, mx)){
+                width: 250px;
+                height: 400px;
+            }
         }
         .card-rows1__container {
             width: 350px;
@@ -193,6 +201,10 @@
             @include mediaQueryMin($breakpoints-4k) {
                 width: 400px;
                 height: 620px;
+            }
+            @include mediaQueryMinMax(map-get($breakpoints-laptop, mn),map-get($breakpoints-laptop, mx)){
+                width: 250px;
+                height: 400px;
             }
         }
         :global(.card-rows1__title2) {
@@ -214,6 +226,9 @@
             }
             @include mediaQueryMin($breakpoints-2k) {
                 left: 9.4%;
+            }
+            @include mediaQueryMinMax(map-get($breakpoints-laptop, mn),map-get($breakpoints-laptop, mx)){
+                left: -7.5%;
             }
         }
         :global(.card-rows1__title2::after) {
@@ -262,6 +277,10 @@
             align-items: center;
             @include mediaQueryMin($breakpoints-4k) {
                 margin-bottom: 25px;
+            }
+            @include mediaQueryMinMax(map-get($breakpoints-laptop, mn),map-get($breakpoints-laptop, mx)){
+                margin-bottom: 0px;
+                justify-content: space-between;
             }
         }
         :global(#{$class}-tile) {

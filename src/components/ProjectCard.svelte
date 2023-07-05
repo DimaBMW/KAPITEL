@@ -18,12 +18,20 @@
 <style lang="scss">
     $breakpoints-4k: 3839.98px;
     $breakpoints-2k: 2559.98px;
+    $breakpoints-laptop:(
+            mx:1440.98px,
+            mn:1024.98px,
+    );
     .glide__slide {
         position: relative;
         width: 355px;
         margin-top: 20px;
         @include mediaQueryMin($breakpoints-4k) {
             width: 420px;
+        }
+        @include mediaQueryMinMax(map-get($breakpoints-laptop, mn),map-get($breakpoints-laptop, mx)){
+            width: 250px;
+            height:auto;
         }
     }
     .card {
@@ -48,6 +56,10 @@
         @include mediaQueryMin($breakpoints-4k) {
             width: 380px;
         }
+        @include mediaQueryMinMax(map-get($breakpoints-laptop, mn),map-get($breakpoints-laptop, mx)){
+            width: 100px;
+            height:auto;
+        }
     }
     .glide__slide:hover .card {
         opacity: 1;
@@ -67,6 +79,9 @@
         width: 340px;
         @include mediaQueryMin($breakpoints-4k) {
             width: 380px;
+        }
+        @include mediaQueryMinMax(map-get($breakpoints-laptop, mn),map-get($breakpoints-laptop, mx)){
+            width: 250px;
         }
     }
     .card-title__1 {

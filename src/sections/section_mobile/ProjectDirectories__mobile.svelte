@@ -22,11 +22,13 @@
     <Container class="projectdirectories-container">
         <Container class="projectdirectories-container__text">
             <Title class="title">Каталог реализованных проектов</Title>
-            <Text class="text"
-                >Ежегодно компания «Капитель» реализует от 50 крупных объектов
-                под ключ. Мы делаем индивидуальное проектирование за 30-45 дней,
-                включая этапы согласования.
-            </Text>
+            <div class="text-1">
+                <Text class="text"
+                    >Ежегодно компания «Капитель» реализует от 50 крупных объектов
+                    под ключ. Мы делаем индивидуальное проектирование за 30-45 дней,
+                    включая этапы согласования.
+                </Text>
+            </div>
         </Container>
     </Container>
     <Container class="projectdirectories-container__content">
@@ -46,6 +48,10 @@
 
 <style lang="scss">
     $class: ".projectdirectories";
+    $breakpoints: (
+        md: 768px,
+        xl: 1024px,
+    );
     #{$class} {
         position: relative;
         background: #F5F5F5;
@@ -55,6 +61,12 @@
             position: relative;
             z-index: 1;
             background: #000000;
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                padding: 50px 40px 50px 40px;
+            }
+        }
+        :global(.text-1){
+            padding: 0px 20px 0px 20px;
         }
         :global(.slaidaer1){
             position: relative;
@@ -85,6 +97,9 @@
             flex-direction: column;
             gap: 50px;
             position: relative;
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                gap: 20px;
+            }
             :global(.title) {
                 font-family: "Montserrat";
                 font-style: normal;
@@ -104,6 +119,9 @@
                 width: 19px;
                 border-bottom: 0.5px solid #ffffff;
                 transform: rotate(45deg);
+                @include mediaQueryMin(map-get($breakpoints, md)){
+                    left: -5px;
+                }
             }
             :global(.text) {
                 color: #fff;
@@ -123,6 +141,9 @@
             width: 79px;
             border-bottom: 0.5px solid #ffffff;
             transform: rotate(180deg);
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                
+            }
         }
         :global(#{$class}-container__text::before) {
             content: "";
@@ -132,6 +153,11 @@
             width: 169px;
             border-bottom: 0.5px solid #ffffff;
             transform: rotate(90deg);
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                left: -60px;
+                width: 129px;
+                top: 30px;
+            }
         }
         :global(#{$class}-container__content) {
             width: 100%;
@@ -145,6 +171,9 @@
             justify-content: space-between;
             align-items: center;
             padding: 0px 20px 0px 20px;
+            @include mediaQueryMin(map-get($breakpoints, md)){
+                padding: 0px 40px 0px 40px;
+            }
         }
         :global(.btn1) {
             position: relative;

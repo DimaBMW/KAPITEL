@@ -133,9 +133,14 @@
 <style lang="scss">
     $breakpoints-4k: 3839.98px;
     $breakpoints-2k: 2559.98px;
+    $breakpoints: (
+        md: 768px,
+        xl: 1024px,
+    );
     .glide {
         // position: absolute;
         right: 0;
+        width:100%;
         height: 430px;
         display: flex;
         align-items: center;
@@ -143,7 +148,7 @@
     }
     .glide__slide{
         display: flex;
-        width:50%;
+        width:90%;
         height: 350px;
         padding: 40px 0px 40px 0px;
         transition: all .50s ease;
@@ -154,11 +159,14 @@
         width: 100%;
         height: 100%;
         background-color: black;
+        @include mediaQueryMin(map-get($breakpoints, md)){
+            width: 100%;
+        }
         transition: all .10s ease;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-       padding: 50px 20px 50px 20px;
+        padding: 50px 20px 50px 20px;
         .title{
             opacity: 0;
             transition: all .50s ease;
