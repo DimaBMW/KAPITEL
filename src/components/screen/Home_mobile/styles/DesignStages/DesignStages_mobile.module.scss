@@ -1,0 +1,95 @@
+.designstages {
+  &_container {
+    padding: 20px 20px 50px 20px;
+    @media (min-width: 426.98px) and (max-width: 768.98px) {
+      padding: 50px 40px 50px 40px;
+    }
+    margin: 0 0;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+    gap: 40px;
+    background: #f5f5f5;
+    &__titleBox::after {
+      content: "";
+      top: -0px;
+      left: 12px;
+      position: absolute;
+      width: 17px;
+      border-bottom: 0.5px solid #000000;
+      transform: rotate(45deg);
+      @media (min-width: 426.98px) and (max-width: 768.98px) {
+        top: 20px;
+        left: 22px;
+      }
+    }
+    &__titleBox {
+      padding-left: 20px;
+    }
+    &_box {
+      &__selector {
+        padding-left: 20px;
+        position: relative;
+      }
+    }
+  }
+}
+
+.designstages_container::after {
+  content: "";
+  top: 0px;
+  left: 11px;
+  position: absolute;
+  width: 79px;
+  border-bottom: 0.5px solid #000000;
+  transform: rotate(180deg);
+  @media (min-width: 426.98px) and (max-width: 768.98px) {
+    top: 20px;
+    left: 22px;
+  }
+}
+.designstages_container::before {
+  content: "";
+  top: 10px;
+  left: -9px;
+  position: absolute;
+  width: 59px;
+  border-bottom: 0.5px solid #000000;
+  transform: rotate(90deg);
+  @media (min-width: 426.98px) and (max-width: 768.98px) {
+    top:30px;
+    left: 2px;
+  }
+}
+.designstages_container_box__selector::after {
+  content: "";
+  bottom: -18px;
+  left: -2px;
+  position: absolute;
+  width: 100%;
+  border-bottom: 0.5px solid #000000;
+  transform: rotate(180deg);
+  @media (min-width: 426.98px) and (max-width: 768.98px) {
+    bottom: -18px;
+    left: -2px;
+  }
+}
+.designstages_container_box__selector::before {
+  content: "";
+  bottom: 0px;
+  left: -28px;
+  position: absolute;
+  width: 20%;
+  border-bottom: 0.5px solid #000000;
+  transform: rotate(90deg);
+  @media (min-width: 426.98px) and (max-width: 768.98px) {
+    bottom: 0px;
+    left: -45px;
+    width: 15%;
+  }
+}
+.btn_box{
+  margin-top: 50px;
+}

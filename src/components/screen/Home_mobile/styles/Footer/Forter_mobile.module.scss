@@ -1,0 +1,47 @@
+.footer {
+  &_container {
+    padding: 50px 20px 50px 20px;
+    @media (min-width: 426.98px) and (max-width: 768.98px) {
+      padding: 50px 40px 50px 40px;
+    }
+    margin: 0 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    z-index: 1;
+    background: #000000;
+    &__textBox {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      position: relative;
+    }
+    &__InfoBox{
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        padding-top: 50px;
+        justify-content: space-between;
+    }
+  }
+}
+.iconBox{
+    display: flex;
+    gap: 25px;
+    align-items:center;
+}
+.iconn {
+    fill: #ffffff79;
+    aspect-ratio: 1 / 1;
+    transition: all 0.2s linear;
+    padding-bottom: 15px;
+  }
+  .icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .iconn:hover {
+    fill: #ffffff;
+  }

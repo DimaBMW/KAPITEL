@@ -1,0 +1,75 @@
+.ProjectDerictories {
+  &_container {
+    padding: 55px 40px 55px 40px;
+    margin: 0 0;
+    position: relative;
+    z-index: 1;
+    background: #ffffff;
+    border: none;
+    &__titleCont {
+      display: flex;
+      margin-bottom: 110px;
+      &_cols1 {
+        flex: 0 1 1.5%;
+      }
+      &_cols2 {
+        flex: 0 1 95%;
+        padding: 0px 700px 0px 0px;
+        text-align: left;
+        &_text {
+          width: 60%;
+          display: flex;
+          padding-top: 40px;
+        }
+      }
+    }
+    &__CardCont {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-column-gap: 15px;
+      grid-row-gap: 50px;
+      padding: 0px;
+      @media (min-width: 1024px) and (max-width: 1679px) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+      }
+      @media (min-width: 1680px) and (max-width: 1800px) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-row-gap: 50px;
+        grid-column-gap: 25px;
+      }
+    }
+  }
+}
+.card_rows1__container {
+  width: 320px;
+  height: 503px;
+  border: 1px solid #000000;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  justify-content: center;
+  margin-left: 15px;
+  @media (min-width: 1024px) and (max-width: 1679px){
+    height: 470px;
+    width: 300px;
+  }
+  @media (min-width: 1680px) and (max-width: 1800px){
+    height: 550px;
+    width: 350px;
+    margin-left: 15px;
+  }
+}
+.card_rows2__container {
+  width: 320px;
+  height: 503px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media (min-width: 1024px) and (max-width: 1720px){
+    height: 470px;
+    width: 300px;
+  }
+}

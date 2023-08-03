@@ -1,0 +1,22 @@
+.buttonMobile{
+    background:none;
+    align-self: center;
+    margin: 0 0;
+    // margin-top: 50px;
+    width: 100%;
+    min-height: 50px;
+    max-height: 50px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    align-self: center;
+    cursor: pointer;
+    line-height: 28px;
+    color: #ffffff;
+    border:1px solid #ffffff;
+}
+.buttonMobile.black{
+    color: #000000;
+    border:1px solid #000000;
+}

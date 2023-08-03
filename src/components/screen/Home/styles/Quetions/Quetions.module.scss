@@ -1,0 +1,30 @@
+.quetions {
+  position: relative;
+  &_container {
+    margin: 0 0;
+    border: none;
+  }
+  &_main {
+    border: none;
+    &__container {
+      padding: 50px 40px 50px 40px;
+      margin: 0 0;
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    &__content {
+      padding: 0px 0px 20px 0px;
+      flex: 0 1 55%;
+      display: flex;
+      gap: 25px;
+      flex-direction: column;
+      justify-content: space-between;
+      @media (min-width: 1024px) and (max-width: 1720px){
+        flex: 0 1 65%;
+      }
+    }
+  }
+}

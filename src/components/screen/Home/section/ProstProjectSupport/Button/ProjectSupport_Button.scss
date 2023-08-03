@@ -1,0 +1,57 @@
+.button__project {
+  width: 240px;
+  height: 50px;
+  background: #000000;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 50px;
+  align-self: center;
+  position: absolute;
+  z-index: 10;
+  bottom: 50px;
+  color: rgb(255, 255, 255);
+  letter-spacing: 4px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+}
+.button__project:before,
+.button__project:after,
+.button__project-span:before,
+.button__project-span:after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: rgb(255, 255, 255);
+  transition: 1s;
+  mix-blend-mode: hue;
+}
+
+.button__project:before {
+  top: -2px;
+  left: -2px;
+}
+.button__project:after {
+  top: -2px;
+  right: -2px;
+}
+.button__project-span:before {
+  bottom: -2px;
+  left: -2px;
+}
+.button__project-span:after {
+  bottom: -2px;
+  right: -2px;
+}
+
+.button__project:hover:before,
+.button__project:hover:after,
+.button__project:hover .button__project-span:before,
+.button__project:hover .button__project-span:after {
+  width: calc(240px / 2);
+  height: calc(50px / 2);
+}

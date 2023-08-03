@@ -1,0 +1,159 @@
+.select2222 {
+    padding-left: 0px;
+    padding-right: 0px;
+    text-align: left;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    transition: all 0.5s ease;
+    background-color: #000000;
+}
+.select-title-box2:hover {
+  cursor: pointer;
+}
+.select-title-box2 {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  display: flex;
+  width: 100%;
+  border:none;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  position: relative;
+  z-index: 100;
+}
+.select-text__box2 {
+  // width: 100%;
+  visibility: hidden;
+  padding: 0px 20px 0px 20px;
+  height: 0%;
+  display: flex;
+  align-items: start;
+  transition: all 0.5s ease;
+}
+.select-text__box2.select-active {
+  visibility: visible;
+  height: 100%;
+  margin-bottom: 200px;
+  z-index: 0;
+  @media (min-width: 426.98px) and (max-width: 768.98px) {
+    margin-bottom: 100px;
+  }
+}
+.select-box-img2 {
+  width: 20px;
+  height: 100%;
+}
+.select__container2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.selectorr::after{
+    content: "Этап 1";
+    bottom:80px;
+    left: -54px;
+    letter-spacing: 2px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    position: absolute;
+    width: 77px;
+    transform: rotate(-90deg);
+    @media (min-width: 426.98px) and (max-width: 768.98px) {
+      bottom:100px;
+      left: -54px;
+    }
+}
+.selectorr2::after{
+    content: "Этап 2";
+    bottom:80px;
+    left: -54px;
+    letter-spacing: 2px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    position: absolute;
+    width: 77px;
+    transform: rotate(-90deg);
+    @media (min-width: 426.98px) and (max-width: 768.98px) {
+      bottom:100px;
+      left: -54px;
+    }
+}
+.selectorr3::after{
+    content: "Этап 3";
+    bottom:80px;
+    left: -54px;
+    letter-spacing: 2px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    position: absolute;
+    width: 77px;
+    transform: rotate(-90deg);
+    @media (min-width: 426.98px) and (max-width: 768.98px) {
+      bottom:100px;
+      left: -54px;
+    }
+}
+.selectorr4::after{
+    content: "Этап 4";
+    bottom:80px;
+    left: -54px;
+    letter-spacing: 2px;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    position: absolute;
+    width: 77px;
+    transform: rotate(-90deg);
+    @media (min-width: 426.98px) and (max-width: 768.98px) {
+      bottom:100px;
+      left: -54px;
+    }
+}
+.selectorr::before{
+    content: "";
+    bottom:-20px;
+    left: -23px;
+    position: absolute;
+    width: 17px;
+    border-bottom: 0.5px solid #000000;
+    transform: rotate(45deg);
+}
+.selectorr2::before{
+    content: "";
+    bottom:-20px;
+    left: -23px;
+    position: absolute;
+    width: 17px;
+    border-bottom: 0.5px solid #000000;
+    transform: rotate(45deg);
+}
+.selectorr3::before{
+    content: "";
+    bottom:-20px;
+    left: -23px;
+    position: absolute;
+    width: 17px;
+    border-bottom: 0.5px solid #000000;
+    transform: rotate(45deg);
+}
+.selectorr4::before{
+    content: "";
+    bottom:-20px;
+    left: -23px;
+    position: absolute;
+    width: 17px;
+    border-bottom: 0.5px solid #000000;
+    transform: rotate(45deg);
+}

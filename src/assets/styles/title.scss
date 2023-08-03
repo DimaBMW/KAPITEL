@@ -1,0 +1,614 @@
+.title {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  color: #ffffff;
+}
+//Title в header
+.header__title {
+  text-transform: uppercase;
+  width: 80%;
+  font-size: 30px;
+  line-height: 45px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.5s ease;
+  @media (min-width: 1024px) and (max-width: 1720px) {
+    font-size: 14px;
+  }
+  .regular {
+    font-weight: 300;
+  }
+  .extrabold {
+    font-weight: 600;
+  }
+}
+.header__title.regular {
+  font-weight: 300;
+}
+.header__title.extrabold {
+  font-weight: 600;
+}
+.title-isactive {
+  text-transform: uppercase;
+  width: 80%;
+  font-size: 30px;
+  line-height: 45px;
+  overflow: hidden;
+  opacity: 1;
+  transition: all 0.5s ease;
+  animation: fadeIn1 1s ease-in-out forwards;
+  @media (min-width: 1024px) and (max-width: 1720px) {
+    font-size: 24px;
+  }
+}
+.title-isactive.regular {
+  font-weight: 300;
+}
+.title-isactive.extrabold {
+  font-weight: 600;
+}
+@keyframes fadeIn1 {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+//Title в saitbar
+.sait-bar__title {
+  margin-bottom: 50px;
+  color: #000000;
+  @media (min-width: 1024px) and (max-width: 1720px) {
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+}
+//Title в section <<WhyWe>>
+.whywe-title {
+  text-align: left;
+  height: 70px;
+  color: #000000;
+  position: relative;
+  opacity: 0;
+  @media (min-width: 1024px) and (max-width: 1720px) {
+    font-size: 18px;
+  }
+  transition: all 0.5s ease;
+}
+.whywe-title.show {
+  opacity: 1;
+  overflow: hidden;
+  animation: fadeIn1 1s ease-in-out forwards;
+}
+@keyframes blinkCursor {
+  from {
+    border-right-color: #fff;
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 12.7em;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Title в designStages
+.designstages__title {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 24px;
+  padding-left: 28%;
+  color: #000000;
+  opacity: 0;
+  transition: all 0.5s ease;
+  @media (min-width: 1024px) and (max-width: 1720px) {
+    font-size: 18px;
+  }
+}
+.designstages__title.show {
+  opacity: 1;
+  overflow: hidden;
+  animation: fadeIn2 1s ease-in-out forwards;
+}
+.content__title {
+  text-align: left;
+  writing-mode: vertical-rl;
+  align-items: center;
+  display: flex;
+  left: 1.85%;
+  padding: 20px 0px;
+  background: #f5f5f5;
+  position: absolute;
+  top: 26%;
+  transform: rotate(-180deg);
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #000000;
+  @media (min-width: 1024px) and (max-width: 1720px) {
+    font-size: 18px;
+    left: 2.4%;
+  }
+  @media (min-width: 1680px) and (max-width: 1800px) {
+    font-size: 18px;
+    left: 2.1%;
+  }
+}
+.content__title::after {
+  content: "";
+  top: -1px;
+  left: 3px;
+  position: absolute;
+  width: 15px;
+  border: 1px solid #000000;
+  transform: rotate(-45deg);
+}
+.content__title::before {
+  content: "";
+  bottom: -1px;
+  left: 3px;
+  position: absolute;
+  width: 15px;
+  border: 1px solid #000000;
+  transform: rotate(-45deg);
+}
+.swiper-title{
+  font-size: 18px;
+}
+.content__title2 {
+  text-align: left;
+  writing-mode: vertical-rl;
+  align-items: center;
+  display: flex;
+  left: 1.85%;
+  padding: 20px 0px;
+  background: #f5f5f5;
+  position: absolute;
+  top: 70%;
+  transform: rotate(-180deg);
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #000000;
+  @media (min-width: 1024px) and (max-width: 1720px) {
+    font-size: 18px;
+    left: 2.4%;
+  }
+  @media (min-width: 1680px) and (max-width: 1800px) {
+    font-size: 18px;
+    left: 2.1%;
+  }
+}
+.content__title2::before {
+  content: "";
+  bottom: -1px;
+  left: 3px;
+  position: absolute;
+  width: 15px;
+  border: 1px solid #000000;
+  transform: rotate(-45deg);
+}
+.content__title2::after {
+  content: "";
+  top: -1px;
+  left: 3px;
+  position: absolute;
+  width: 15px;
+  border: 1px solid #000000;
+  transform: rotate(-45deg);
+}
+.textbox__title {
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: "Montserrat";
+  line-height: 25px;
+  padding: 10px 10px 10px 10px;
+  color: #000000;
+  opacity: 0;
+  transition: all 0.5s ease;
+  @media (min-width: 1024px) and (max-width: 1720px) {
+    font-size: 18px;
+  }
+}
+.textbox__title.show {
+  opacity: 1;
+  overflow: hidden;
+  animation: fadeIn2 1s ease-in-out forwards;
+}
+@keyframes fadeIn2 {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.content__title-black {
+  text-align: left;
+  writing-mode: vertical-rl;
+  align-items: center;
+  display: flex;
+  left: 1.5%;
+  padding: 20px 0px;
+  background: #000000;
+  position: absolute;
+  top: 18%;
+  transform: rotate(-180deg);
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #ffffff;
+  @media (min-width: 1024px) and (max-width: 1720px) {
+    font-size: 18px;
+    left: 2%;
+    top: 18%;
+  }
+  @media (min-width: 1680px) and (max-width: 1800px) {
+    font-size: 18px;
+    left: 1.7%;
+  }
+}
+.content__title-black::after {
+  content: "";
+  top: -1px;
+  left: 3px;
+  position: absolute;
+  width: 15px;
+  border: 1px solid #ffffff;
+  transform: rotate(-45deg);
+}
+.content__title-black::before {
+  content: "";
+  bottom: -1px;
+  left: 3px;
+  position: absolute;
+  width: 15px;
+  border: 1px solid #ffffff;
+  transform: rotate(-45deg);
+}
+.content__title2-black {
+  text-align: left;
+  writing-mode: vertical-rl;
+  align-items: center;
+  display: flex;
+  left: 1.5%;
+  padding: 20px 0px;
+  background: #000000;
+  position: absolute;
+  top: 69%;
+  transform: rotate(-180deg);
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #ffffff;
+  @media (min-width: 1024px) and (max-width: 1720px) {
+    font-size: 18px;
+    left: 2%;
+    top: 69%;
+  }
+  @media (min-width: 1680px) and (max-width: 1800px) {
+    font-size: 18px;
+    left: 1.7%;
+  }
+}
+.content__title2-black::before {
+  content: "";
+  bottom: -1px;
+  left: 3px;
+  position: absolute;
+  width: 15px;
+  border: 1px solid #ffffff;
+  transform: rotate(-45deg);
+}
+.content__title2-black::after {
+  content: "";
+  top: -1px;
+  left: 3px;
+  position: absolute;
+  width: 15px;
+  border: 1px solid #ffffff;
+  transform: rotate(-45deg);
+}
+.title__black {
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: "Montserrat";
+  line-height: 25px;
+  padding: 10px 10px 10px 10px;
+  color: #ffffff;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.title__black.show {
+  opacity: 1;
+  overflow: hidden;
+  animation: fadeIn2 1s ease-in-out forwards;
+}
+// title в postprojectsupport
+.projectsupport__title {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 24px;
+  padding-left: 22%;
+  color: #000000;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.projectsupport__title.show {
+  opacity: 1;
+  overflow: hidden;
+  animation: fadeIn2 1s ease-in-out forwards;
+}
+//title в селект
+.select-title {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  padding-bottom: 0px;
+  line-height: 24px;
+  text-transform: uppercase;
+  text-align: left;
+  color: #000000;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.select-title.show {
+  opacity: 1;
+  overflow: hidden;
+  animation: fadeIn22 1s ease-in-out forwards;
+}
+.select-title__mobile {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-align: left;
+}
+.select-title__mobile.show {
+  opacity: 1;
+  overflow: hidden;
+  animation: fadeIn22 1s ease-in-out forwards;
+}
+.select-title__mobile2 {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #000000;
+  text-align: left;
+}
+.select-title__mobile2.show {
+  opacity: 1;
+  overflow: hidden;
+  animation: fadeIn22 1s ease-in-out forwards;
+}
+.select-title-black {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  padding-bottom: 0px;
+  line-height: 24px;
+  text-transform: uppercase;
+  text-align: left;
+  color: #ffffff;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.select-title-black.show {
+  opacity: 1;
+  overflow: hidden;
+  animation: fadeIn22 1s ease-in-out forwards;
+}
+// title в Designproject
+.projectderictories__title {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 44px;
+  color: #000000;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.projectderictories__title.show {
+  opacity: 1;
+  overflow: hidden;
+  animation: fadeIn2 1s ease-in-out forwards;
+}
+.card-rows1__title {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+}
+// title в slaider
+.slaider__title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 40px;
+  padding-right: 130px;
+  font-family: "Montserrat";
+  font-style: normal;
+  color: #ffffff;
+}
+// title в footer
+.footer__title {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  padding-bottom: 0px;
+  line-height: 24px;
+  text-transform: uppercase;
+  text-align: left;
+  padding-bottom: 20px;
+  color: #000000;
+}
+@keyframes fadeIn22 {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+// project card
+.card__title {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ffffff;
+  position: relative;
+  transition: all 0.5s ease;
+  opacity: 0;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+.card__title2 {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 15px;
+  color: #ffffff;
+  transition: all 0.5s ease;
+  opacity: 0;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+.header-content__text-title {
+  font-family: "Montserrat";
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 29px;
+  color: #ffffff;
+  @media (min-width: 426.98px) and (max-width: 768.98px) {
+    font-size: 28px;
+  }
+}
+// title d mobile whywe
+.whywe__mobile-title {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  width: 90%;
+  align-self: center;
+  font-size: 18px;
+  line-height: 22px;
+  text-transform: uppercase;
+  color: #000000;
+}
+.whywe__mobile-title::after {
+  content: "";
+  top: -20px;
+  left: -10px;
+  position: absolute;
+  width: 19px;
+  border-bottom: 0.5px solid #000000;
+  transform: rotate(45deg);
+}
+// title d deisgnstages mobile
+.designmobile__title {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  width: 90%;
+  align-self: center;
+  font-size: 18px;
+  line-height: 22px;
+  text-transform: uppercase;
+  color: #000000;
+}
+// title в footer
+.footer-title {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  width: 90%;
+  align-self: left;
+  color: #fff;
+  font-size: 18px;
+  line-height: 22px;
+  text-transform: uppercase;
+}
+.projectrd-title {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  width: 90%;
+  color: #fff;
+  align-self: center;
+  font-size: 18px;
+  line-height: 22px;
+  text-transform: uppercase;
+  position: relative;
+}
+.projectrd-title::after {
+  content: "";
+  top: -20px;
+  left: -20px;
+  position: absolute;
+  width: 19px;
+  border-bottom: 0.5px solid #ffffff;
+  transform: rotate(45deg);
+  @media (min-width: 426.98px) and (max-width: 768.98px) {
+    top: -20px;
+    left: -60px;
+  }
+}

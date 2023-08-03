@@ -1,0 +1,44 @@
+.link {
+  position: relative;
+  text-decoration: none;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+  cursor: crosshair;
+  line-height: calc(0px + 5px);
+  transition: all 0.2s linear;
+  padding-bottom: 5px;
+}
+.link.black{
+  color:black;
+}
+.link::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0%;
+  margin-top: 7px;
+  height: 0.5px;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  transition: all 0.5s linear;
+}
+.link.black:hover{
+  color: #000;
+}
+.link:hover {
+  color: white;
+  letter-spacing: 2px;
+  transition: all 0.5s linear;
+}
+
+.link:hover::after {
+  background-color: white;
+  width: 100%;
+  transition: all 0.5s linear;
+}
+

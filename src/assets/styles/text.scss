@@ -1,0 +1,348 @@
+.texts {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-size: 16px;
+  color: #ffffff;
+  @media (min-width: 1024px) and (max-width: 1720px) {
+    font-size: 14px;
+  }
+}
+.header__text {
+  width: 50%;
+  text-align: left;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  padding-top: 60px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.5s ease;
+}
+.text-isactive {
+  width: 50%;
+  text-align: left;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  padding-top: 60px;
+  overflow: hidden;
+  opacity: 1;
+  transition: all 0.5s ease;
+  animation: fadeIn 1s ease-in-out forwards;
+  @media (min-width: 1024px) and (max-width: 1720px) {
+    font-size: 14px;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+//text в section <<WhyWe>>
+.content-box__text-1 {
+  padding-right: 120px;
+  line-height: 20px;
+  font-size: 14px;
+  color: black;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.content-box__text-1.show {
+  opacity: 1;
+  overflow: hidden;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+.content-box__text-2 {
+  font-size: 14px;
+  line-height: 20px;
+  color: black;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.content-box__text-2.show {
+  opacity: 1;
+  overflow: hidden;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+// text в DisagnStages
+.textbox__text {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  text-align: left;
+  position: relative;
+  padding: 10px;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.textbox__text.show {
+  opacity: 1;
+  overflow: hidden;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+.text__black {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffffff;
+  text-align: left;
+  position: relative;
+  padding: 10px;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.text__black.show {
+  opacity: 1;
+  overflow: hidden;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+// text в select
+.select-text {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  width: 70%;
+  height: 0;
+  text-align: left;
+  opacity: 0;
+  transition: all 0.2s ease;
+  color: #000000;
+}
+.select-text.select-active {
+  position: relative;
+  width: 70%;
+  opacity: 1;
+  z-index: 0;
+}
+.select-text__mobile {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+  width: 100%;
+  height: 0;
+  text-align: left;
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+.select-text__mobile.select-active {
+  position: relative;
+  width: 100%;
+  opacity: 1;
+  z-index: 0;
+}
+.select-text__mobile2 {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  width: 100%;
+  height: 0;
+  text-align: left;
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+.select-text__mobile2.select-active {
+  position: relative;
+  width: 100%;
+  opacity: 1;
+  z-index: 0;
+}
+.select-text-black {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  width: 70%;
+  height: 0;
+  text-align: left;
+  opacity: 0;
+  transition: all 0.2s ease;
+  color: #ffffff;
+}
+.select-text-black.select-active {
+  position: relative;
+  width: 70%;
+  opacity: 1;
+  z-index: 0;
+}
+// text в projectderictories
+.projectderictories__text {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000000;
+  padding-right: 60px;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.projectderictories__text.show {
+  opacity: 1;
+  overflow: hidden;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+.card-rows1__text {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  width: 300px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #ffffff;
+  color: #000000;
+  position: absolute;
+  transform: rotate(-90deg);
+  left: -5%;
+  @media (min-width: 1024px) and (max-width: 1679px) {
+    left: -6.5%;
+  }
+  @media (min-width: 1680px) and (max-width: 1800px) {
+    left: -5.5%;
+  }
+}
+.card-rows1__text::after {
+  content: "";
+  bottom: 10px;
+  left: -9px;
+  position: absolute;
+  width: 15px;
+  border: 1px solid #000000;
+  transform: rotate(45deg);
+}
+.card-rows1__text::before {
+  content: "";
+  bottom: 10px;
+  right: -9px;
+  position: absolute;
+  width: 15px;
+  border: 1px solid #000000;
+  transform: rotate(45deg);
+}
+// text в slaider
+.slaider__text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  padding-right: 50px;
+  margin-top: 10px;
+  font-family: "Montserrat";
+  font-style: normal;
+  color: #ffffff;
+}
+// text в footer
+.footer__text {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  width: 70%;
+  height: 0;
+  padding-bottom: 20px;
+  text-align: left;
+  opacity: 1;
+  transition: all 0.2s ease;
+  color: #000000;
+}
+// project card
+.card__text {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 15px;
+  overflow: hidden;
+  color: #ffffff;
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+.header-content__text {
+  text-align: left;
+  // padding-right: 20px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #ffffff;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  @media (min-width: 426.98px) and (max-width: 768.98px) {
+    opacity: 0;
+    visibility: hidden;
+    padding-top: 0;  
+  }
+}
+// text в whywe mobile
+.whywe__mobile-text {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000000;
+  @media (min-width: 426.98px) and (max-width: 768.98px) {
+    padding: 0px 0px 0px 35px;
+  }
+}
+.slaider__mobile-text {
+  color: #ffffff;
+}
+.designmobile__text {
+  color: #000000;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  padding-left: 0px;
+  font-size: 14px;
+  line-height: 16px;
+  padding-top: 25px;
+}
+// text в footer mobile
+.footer-text {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  color: #fff;
+  font-size: 14px;
+  line-height: 16px;
+}
+// adwdadawddadawdad
+.projectrd-text {
+  color: #fff;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 16px;
+}
+.swiper-text{
+  font-size: 14px;
+  width: 90%;
+  height:100px;
+}

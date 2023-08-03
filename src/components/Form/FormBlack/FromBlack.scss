@@ -1,0 +1,120 @@
+.form2 {
+    background: none;
+    border-radius: 20px;
+    min-height: 350px;
+    min-width: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  
+  .input-container2 {
+    height: 50px;
+    position: relative;
+    // width: 100%;
+    padding-right: 45px;
+  }
+  
+  .ic1 {
+    margin-top: 40px;
+  }
+  
+  .ic2 {
+    margin-top: 30px;
+  }
+  .btnfromBlack{
+    margin-top: 50px;
+  }
+  .input2 {
+    background: none;
+    border: 0;
+    color: #ffffff;
+    font-size: 18px;
+    height: 100%;
+    outline: 0;
+    width: 100%;
+    padding: 4px 20px 0;
+    border-bottom: 1px solid #ffffff;
+    position: relative;
+  }
+  .polos::after {
+    content: "";
+    bottom: -5px;
+    right: -2px;
+    position: absolute;
+    width: 15px;
+    border-bottom: 0.5px solid #ffffff;
+    transform: rotate(-45deg);
+  }
+  .polos::before {
+    content: "";
+    bottom: -5px;
+    left: -7px;
+    position: absolute;
+    width: 15px;
+    border-bottom: 0.5px solid #ffffff;
+    transform: rotate(-45deg);
+  }
+  
+  .cut {
+    display: none;
+    border-radius: 10px;
+    height: 20px;
+    left: 20px;
+    position: absolute;
+    top: -20px;
+    transform: translateY(0);
+    transition: transform 200ms;
+    width: 76px;
+  }
+  
+  .cut-short {
+    width: 50px;
+  }
+  
+  .input:focus ~ .cut,
+  .input:not(:placeholder-shown) ~ .cut {
+    transform: translateY(8px);
+  }
+  
+  .placeholder2 {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 34px;
+    text-transform: uppercase;
+    color: #ffffff;
+    left: 20px;
+    pointer-events: none;
+    position: absolute;
+    transform-origin: 0 50%;
+    transition: transform 200ms, color 200ms;
+    top: 20px;
+  }
+  
+  .input2:focus ~ .placeholder2,
+  .input2:not(:placeholder-shown) ~ .placeholder2 {
+    transform: translateY(-30px) translateX(10px) scale(0.75);
+  }
+  
+  .input2:not(:placeholder-shown) ~ .placeholder2 {
+    color: #ffffff;
+  }
+  
+  .input2:focus ~ .placeholder2 {
+    color: #ffffff;
+  }
+  .icon {
+    fill: #ffffff7e;
+    aspect-ratio: 1 / 1;
+    transition: all 0.2s linear;
+    padding-bottom: 15px;
+  }
+  .icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  

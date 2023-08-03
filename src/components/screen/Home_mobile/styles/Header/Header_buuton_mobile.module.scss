@@ -1,0 +1,62 @@
+.button {
+  position: relative;
+  padding: 10px;
+  height: 40px;
+  width: 220px;
+  overflow: hidden;
+  position: relative;
+  align-self: center;
+  top: 17%;
+  transform: translateY(-50%);
+  background: none;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  border: none;
+  line-height: 17px;
+  margin-top: 0px;
+  text-transform: uppercase;
+  color: #ffffff;
+  cursor: crosshair;
+  transition: all 0.5s ease;
+}
+.button::after {
+  position: absolute;
+  content: "";
+  z-index: -2;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #ffffff;
+  transition: all 0.5s ease;
+}
+
+.button:hover {
+  color: #000000;
+  transition-delay: 0.5s;
+}
+
+.button:hover::after {
+  transition-delay: 0.35s;
+  width: 100%;
+}
+
+.button::before {
+  position: absolute;
+  content: "";
+  z-index: -2;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 38px;
+  border: 1px solid #ffffff;
+  border-left: 0;
+  border-right: 0;
+  transition: all 0.5s ease;
+}
+.button:hover::before {
+  width: 100%;
+  transition-delay: 0s;
+}

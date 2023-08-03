@@ -1,0 +1,108 @@
+.image {
+  // width: 100%;
+  height: auto;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+// .icon-container__img{
+//   animation: wheel 2.5s 1s linear infinite;
+//   animation-fill-mode: both;
+//   transform-origin: center center;
+// }
+// @keyframes wheel {
+//   from {
+//       transform: translateX(0) rotate(0);
+//   }
+//   to {
+//       transform: translateX(0px) rotate(1turn);
+//   }
+// }
+.protacor__img1 {
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  transform: rotate(180deg);
+}
+// img в DisagnStges
+.content__img {
+  width: 20%;
+  height: 250px;
+  flex: 0 1 50%;
+  padding: 0px 32px 0px 50px;
+}
+// img в select
+.select-img {
+  width: 20px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  transition: all 0.5s ease;
+}
+.select-img.select-active {
+  transform: rotate(90deg);
+  position: relative;
+}
+.projectsupport__img {
+  width: 40%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  overflow: hidden;
+}
+// img в slaider
+.slide-img {
+  width: 200px;
+  height: 80px;
+  vertical-align: center;
+  display: flex;
+  align-items: center;
+  img {
+    width: 100%;
+    height: auto;
+    // border-radius: 5px;
+    // position: relative;
+    // z-index: -10;
+    object-fit: cover;
+    vertical-align: center;
+  }
+}
+// protactor
+// project card
+.projectcard__img {
+  width: 100%;
+  height: auto;
+}
+.slaider__mobile-img {
+  fill: rgba(255, 255, 255, 0.5);
+  aspect-ratio: 1/1;
+  width: 80px;
+}
+// img в design Stages mobile
+.designmobile__img {
+  height: 150px;
+  padding-left: 20px;
+  @media (min-width: 426.98px) and (max-width: 768.98px) {
+    height: 250px;
+  }
+}
+.parthenrs__mobile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+}
+.whuitem__img{
+    width: 100%;
+    height: auto;
+}
+.slaider__img{
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+}
