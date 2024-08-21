@@ -1,3 +1,6 @@
+# KAPITEL
+![Снимок экрана 2024-08-21 184344](https://github.com/user-attachments/assets/9777ed46-ed92-464d-8e09-19a59c79de7a)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
